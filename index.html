@@ -334,7 +334,7 @@
             }, 
             "20CX": { 
                 "male": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], 
-                "female": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] 
+                "female": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2.70,2.80,2.80,2.90,2.90,3.00,3.00,3.10,3.20,3.30,3.40,3.50,3.60,3.70,3.90,4.10,4.30,4.50,4.70,5.00,5.30,5.60,6.00,6.40,6.90,7.40,8.00,8.70,9.40,10.30,11.40,12.50,13.90,15.40,17.20,19.20,21.40,23.90,26.70,29.80,33.20,0,0,0,0,0] 
             } 
         };
         const aiPool = {
@@ -442,11 +442,7 @@
             if (source === 'sum') { 
                 const sumInput = document.getElementById('sumInsuredInput'); 
                 fSum = parseFloat(sumInput ? sumInput.value.replace(/,/g, '') : 0) || 0; 
-                if (currentGender === 'female' && fSum < 400000) { showCustomError("เพศหญิง ทุนประกันขั้นต่ำ 400,000 บาท"); return null; } 
-                if (currentGender === 'male' && fSum < 600000) { showCustomError("เพศชาย ทุนประกันขั้นต่ำ 600,000 บาท"); return null; } 
                 fPrem = Math.round((fSum / 1000) * (totalRate - getDiscount(fSum, currentPlan))); 
-                const premInput = document.getElementById('premiumInput'); 
-                if(premInput) premInput.value = fPrem.toLocaleString(); 
             } else { 
                 const premInput = document.getElementById('premiumInput'); 
                 fPrem = parseFloat(premInput ? premInput.value.replace(/,/g, '') : 50000) || 0; 
@@ -455,8 +451,6 @@
                     if (getDiscount(s + 1, currentPlan) === d_val) { fSum = s; break; } 
                 } 
                 if (fSum === 0) fSum = (fPrem * 1000) / totalRate; 
-                if (currentGender === 'female' && fSum < 400000) { showCustomError("เบี้ยที่ระบุทำให้ทุนประกันต่ำกว่า 400,000 บาท"); return null; } 
-                if (currentGender === 'male' && fSum < 600000) { showCustomError("เบี้ยที่ระบุทำให้ทุนประกันต่ำกว่า 600,000 บาท"); return null; } 
                 const sumInput = document.getElementById('sumInsuredInput'); 
                 if(sumInput) sumInput.value = formatNum(fSum); 
             } 
@@ -493,6 +487,7 @@
             setText('sumMonthly', Math.round(p * 0.09).toLocaleString()); 
             setText('sum3Month', Math.round(p * 0.27).toLocaleString()); 
             setText('sum6Month', Math.round(p * 0.52).toLocaleString()); 
+            
             let comH = `<h4 class="text-xs font-bold text-amber-900 mb-3 tracking-wide text-center">ประมาณการคอมมิชชันรายปี</h4>`; 
             let totalComAmt = 0; 
             COM_RATES[currentPlan].forEach((r, i) => { 
@@ -503,9 +498,14 @@
             const totalPercent = ((totalComAmt / p) * 100).toFixed(1); 
             comH += `<div class="mt-4 pt-3 border-t-2 border-amber-200 flex justify-between items-center"><div class="text-left"><div class="text-lg font-black text-amber-600">${totalPercent}%</div><div class="text-[8px] font-bold text-amber-900 uppercase">Percent รวม</div></div><div class="text-right"><div class="text-xs font-bold text-amber-900">คอมมิชชันรวมตลอดสัญญา</div><div class="text-lg font-black text-amber-600">${totalComAmt.toLocaleString()} บาท</div></div></div>`; 
             document.getElementById('comList').innerHTML = comH; 
+            
             updateMBDisplay(); 
             updateMYBDisplay(); 
             updateNABDisplay(); 
+            
+            setText('caseIncomeBonus', (window.currentMBBonus || 0).toLocaleString() + " บาท");
+            setText('caseIncomeMYBonus', (window.currentMYBBonus || 0).toLocaleString() + " บาท");
+
             const caseTotal = Math.round(fyc + (window.currentMBBonus || 0) + (window.currentMYBBonus || 0) + (window.currentNABBonus || 0)); 
             setText('caseIncomeTotal', caseTotal.toLocaleString() + " บาท"); 
             setText('caseIncomePercent', "(" + ((caseTotal / p) * 100).toFixed(1) + "%)"); 
@@ -649,7 +649,6 @@
                     adviceBox.classList.add('success'); 
                     adviceBox.innerHTML = `<i class=\"fas fa-trophy text-emerald-500 text-lg\"></i><span class=\"text-emerald-900 font-bold\">ยินดีด้วย! คุณได้รับโบนัสสูงสุด ${nabBonus.toLocaleString()} บาท แล้ว</span>`; 
                     if (window.lastMaxNABBonus !== nabBonus && nabBonus > 0 && !document.getElementById('cashMenuContainer').classList.contains('hidden')) { 
-                        showCongratsPopup('โบนัสตัวแทนใหม่ (NAB)', nabBonus.toLocaleString() + ' บาท'); 
                         window.lastMaxNABBonus = nabBonus; 
                     } 
                 } 
@@ -657,7 +656,19 @@
         }
 
         function closeModal() { document.getElementById('resultModal').classList.remove('show'); }
-        function manualTriggerPopup() { openModal(calculate('sum')); }
+
+        function manualTriggerPopup() { 
+            const d = calculate('sum');
+            if(!d) return;
+
+            // ตรวจสอบเงื่อนไขขั้นต่ำหลังจากพิมพ์เสร็จและกดปุ่ม
+            if (currentGender === 'female' && d.sum < 400000) { showCustomError("เพศหญิง ทุนประกันขั้นต่ำ 400,000 บาท"); return; } 
+            if (currentGender === 'male' && d.sum < 600000) { showCustomError("เพศชาย ทุนประกันขั้นต่ำ 600,000 บาท"); return; } 
+            if (d.premium < 4000) { showCustomError("เบี้ยประกันภัยรายปี ขั้นต่ำ 4,000 บาท"); return; }
+
+            openModal(d); 
+        }
+
         function openModal(d) { 
             if(!d) return; 
             setText('modalGender', d.gender); 
@@ -718,7 +729,10 @@
             currentPlan = plan; 
             const b10 = document.getElementById('btn10CX'); if(b10) b10.className = `flex-1 gender-btn ${plan==='10CX'?'active-blue':''}`; 
             const b20 = document.getElementById('btn20CX'); if(b20) b20.className = `flex-1 gender-btn ${plan==='20CX'?'active-blue':''}`; 
-            openModal(calculate(mode)); 
+            
+            const resultData = calculate(mode);
+            if(resultData) manualTriggerPopup(); // เรียกป๊อปอัพแบบมี validation
+
             document.getElementById('textCommand').value = ""; 
         }
 
