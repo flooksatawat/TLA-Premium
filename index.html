@@ -91,8 +91,7 @@
                     <p>• ทุนประกันขั้นต่ำ</p>
                     <p class="pl-4 font-semibold text-blue-900/70">• เพศหญิง 400,000 บาท</p>
                     <p class="pl-4 font-semibold text-blue-900/70">• เพศชาย 600,000 บาท</p>
-                    <p class="mt-2 text-blue-900 font-bold">• สามารถเปลี่ยนแบบประกันได้ ในปีที่ 4</p>
-                    <p class="text-red-700 font-bold mt-1 text-[10px] bg-yellow-100 px-2 py-0.5 rounded inline-block">• เปลี่ยนแบบประกันในปีที่ 4 ยกเว้น ประกันโรคร้าย ประกันสุขภาพ</p>
+                    <p class="mt-2 text-blue-900 font-bold bg-yellow-200 block px-1 rounded text-center tracking-tighter sm:tracking-normal">• เปลี่ยนแบบประกันได้ ในปีที่ 4 ยกเว้น ประกันสุขภาพ/ประกันโรคร้าย</p>
                 </div>
             </div>
         </div>
@@ -755,7 +754,7 @@
 
             const sumStr = formatNum(d.sum); 
             const dailyAvg = formatNum(d.premium / 365);
-            let text = `เพศ: ${d.gender}\nอายุ: ${d.age} ปี\nเบี้ยประกัน: ${amt.toLocaleString()} บาท\n(เฉลี่ย ${dailyAvg} บาท/วัน)\nทุนประกัน ${sumStr} บาท\n\n--------------------------\nสามารถเปลี่ยนแบบประกันได้\nตั้งแต่ปีที่ 4 เป็นต้นไป ยกเว้น !\n- ประกันสุขภาพ\n- ประกันโรคร้ายแรง\n--------------------------`; 
+            let text = `เพศ: ${d.gender}\nอายุ: ${d.age} ปี\nเบี้ยประกัน: ${amt.toLocaleString()} บาท\n(เฉลี่ย ${dailyAvg} บาท/วัน)\nทุนประกัน: ${sumStr} บาท\n\n--------------------------\nเปลี่ยนแบบประกันได้ ในปีที่ 4 ยกเว้น ประกันสุขภาพ/ประกันโรคร้าย\n--------------------------`; 
             copyToClipboard(text, `คัดลอกยอดชำระ${label}เรียบร้อย`); 
         }
 
@@ -764,7 +763,7 @@
                 const d = lastCalculationData; 
                 const sumStr = formatNum(d.sum); 
                 const dailyAvg = formatNum(d.premium / 365);
-                let text = `เพศ: ${d.gender}\nอายุ: ${d.age} ปี\nเบี้ยประกัน: ${Math.round(d.premium).toLocaleString()} บาท\n(เฉลี่ย ${dailyAvg} บาท/วัน)\nทุนประกัน ${sumStr} บาท\n\n--------------------------\nสามารถเปลี่ยนแบบประกันได้\nตั้งแต่ปีที่ 4 เป็นต้นไป ยกเว้น !\n- ประกันสุขภาพ\n- ประกันโรคร้ายแรง\n--------------------------`; 
+                let text = `เพศ: ${d.gender}\nอายุ: ${d.age} ปี\nเบี้ยประกัน: ${Math.round(d.premium).toLocaleString()} บาท\n(เฉลี่ย ${dailyAvg} บาท/วัน)\nทุนประกัน: ${sumStr} บาท\n\n--------------------------\nเปลี่ยนแบบประกันได้ ในปีที่ 4 ยกเว้น ประกันสุขภาพ/ประกันโรคร้าย\n--------------------------`; 
                 copyToClipboard(text, "คัดลอกเรียบร้อยแล้ว"); 
             } 
             closeModal(); 
