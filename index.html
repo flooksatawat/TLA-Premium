@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <title>Convertable Term</title>
+    <title>Signature Legacy</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -14,21 +14,17 @@
         @media (min-width: 450px) { .app-container { border-radius: 40px; box-shadow: 0 20px 60px rgba(0,0,0,0.15); margin-top: 20px; } }
         .header-card { background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%); color: white; padding: clamp(20px, 4vh, 25px) 20px; text-align: center; flex-shrink: 0; }
         .header-card h1 { font-weight: 700; letter-spacing: 0.02em; }
-        .content-padding { padding: 15px 20px 0 20px; flex: 1; width: 100%; display: flex; flex-direction: column; }
+        .content-padding { padding: 15px 20px 20px 20px; flex: 1; width: 100%; display: flex; flex-direction: column; }
         .input-box { background-color: #f1f5f9; border: 1.5px solid #e2e8f0; padding: 14px; border-radius: 18px; text-align: center; font-weight: 600; font-size: 1.1rem; width: 100%; color: #0f172a; outline: none; transition: all 0.2s; }
         .input-box:focus { border-color: #1e3a8a; background-color: white; box-shadow: 0 0 0 4px rgba(30, 58, 138, 0.1); }
         .gender-btn { border: 2px solid #e2e8f0; transition: all 0.2s; font-size: 0.95rem; color: #64748b; background-color: white; border-radius: 14px; padding: 12px 5px; font-weight: 600; cursor: pointer; }
         .gender-btn.active-blue { border-color: #1e3a8a; background-color: #eff6ff; color: #1e3a8a; }
         .gender-btn.active { border-color: #10b981; background-color: #ecfdf5; color: #065f46; }
         .gender-btn.active-pink { border-color: #db2777; background-color: #fdf2f8; color: #be185d; }
-        .result-card { background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%); border-radius: 30px; padding: 25px 15px; color: white; text-align: center; margin: 15px 0; box-shadow: 0 8px 25px -5px rgba(30, 58, 138, 0.3); width: 100%; }
-        .premium-input { background: transparent; border: none; border-bottom: 2.5px solid rgba(255, 255, 255, 0.4); text-align: center; font-size: 3.6rem; font-weight: 700; width: 100%; color: white; outline: none; margin-top: 5px; transition: border-color 0.3s; }
-        .premium-input:focus { border-bottom-color: white; }
         .menu-btn { width: 100%; padding: 16px; font-size: 0.95rem; font-weight: 600; display: flex; align-items: center; justify-content: center; gap: 10px; transition: all 0.2s; cursor: pointer; border-radius: 20px; border: 1.5px solid #e2e8f0; margin-bottom: 12px; }
         .cash-main-btn { background: linear-gradient(135deg, #f8fafc 0%, #cbd5e1 50%, #94a3b8 100%); color: #0f172a; border: 1px solid #94a3b8; flex-direction: column; padding: 18px; gap: 2px; box-shadow: 0 4px 15px rgba(148, 163, 184, 0.3); margin-top: 10px; }
         .cash-container { background-color: #ffffff; border-radius: 24px; border: 1px solid #cbd5e1; overflow: hidden; margin-top: -6px; margin-bottom: 10px; width: 100%; padding: 10px; }
         .sub-menu-btn { width: 100%; padding: 14px 20px; font-size: 0.9rem; font-weight: 600; display: flex; align-items: center; gap: 12px; transition: all 0.2s ease-in-out; cursor: pointer; border-radius: 16px; margin-bottom: 8px; border: 1.5px solid #e2e8f0; background-color: #ffffff; color: #64748b; }
-        .sub-menu-btn:hover { background-color: #f8fafc; color: #334155; }
         .btn-income.is-selected, .btn-income:hover { background-color: #ecfdf5; border-color: #10b981; color: #065f46; }
         .btn-com.is-selected, .btn-com:hover { background-color: #fffbeb; border-color: #f59e0b; color: #92400e; }
         .btn-mb.is-selected, .btn-mb:hover { background-color: #eff6ff; border-color: #3b82f6; color: #1e3a8a; }
@@ -36,7 +32,6 @@
         .btn-nab.is-selected, .btn-nab:hover { background-color: #ecfeff; border-color: #06b6d4; color: #155e75; }
         .info-card { border-radius: 20px; padding: 18px; margin-bottom: 10px; border: 1px solid #e2e8f0; background: #f8fafc; }
         .income-row { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #e2e8f0; }
-        .income-row:last-child { border-bottom: none; }
         .income-label { display: flex; align-items: center; gap: 14px; font-size: 0.9rem; color: #374151; font-weight: 500; }
         .income-label i { width: 22px; text-align: center; font-size: 1.1rem; }
         .income-value { font-weight: 700; font-size: 0.95rem; }
@@ -46,12 +41,7 @@
         .tier-table td:last-child { border-radius: 0 14px 14px 0; text-align: center; font-weight: 800; border-left: none; color: #1e293b; width: 80px; }
         .active td { background: #ecfdf5 !important; border-color: #10b981 !important; color: #065f46 !important; transform: scale(1.02); box-shadow: 0 4px 12px -3px rgba(16, 185, 129, 0.2); position: relative; z-index: 10; }
         .active td:last-child { background: #d1fae5 !important; color: #047857 !important; }
-        .advice-box { background: #fffbeb; border: 1.5px solid #fde68a; border-radius: 18px; padding: 12px 15px; margin-top: 12px; font-size: 13px; color: #92400e; display: flex; align-items: center; gap: 10px; line-height: 1.5; }
-        .advice-box i { font-size: 18px; color: #d97706; flex-shrink: 0; }
-        .advice-box.success { background: #ecfdf5; border-color: #6ee7b7; color: #065f46; }
-        .advice-box.success i { color: #10b981; }
         .com-item-row { display: flex; align-items: center; padding: 12px 0; border-bottom: 1px solid rgba(251, 191, 36, 0.3); font-size: 0.85rem; }
-        .com-item-row:last-child { border-bottom: none; }
         .com-year-pill { background: #fef3c7; border: 1.5px solid #fbbf24; color: #92400e; padding: 3px 12px; border-radius: 20px; font-weight: 700; width: 75px; text-align: center; font-size: 0.75rem; }
         .com-percent-label { font-size: 0.8rem; color: #78350f; margin-left: 12px; flex: 1; font-weight: 600; }
         .com-amount-value { font-size: 1rem; font-weight: 700; color: #78350f; text-align: right; }
@@ -59,25 +49,23 @@
         .modal-overlay.show { opacity: 1; pointer-events: auto; visibility: visible; }
         .modal-content-card { background-color: white; width: 100%; max-width: 24rem; border-radius: 35px; overflow: hidden; max-height: 90vh; display: flex; flex-direction: column; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.4); }
         .modal-scroll-area { overflow-y: auto; padding: 1.5rem; flex: 1; }
-        .company-footer { text-align: center; font-size: 10px; color: #94a3b8; margin-top: 40px; padding-bottom: 25px; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 500; width: 100%; opacity: 0.8; }
         .hidden { display: none; }
         @keyframes pulse-red { 0% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.1); opacity: 0.7; } 100% { transform: scale(1); opacity: 1; } }
         .listening-active { color: #ef4444; animation: pulse-red 1s infinite; }
         .quick-sum-btn { font-size: 10px; font-weight: 700; padding: 8px 2px; border-radius: 12px; background-color: #eff6ff; color: #1e40af; border: 1.5px solid #dbeafe; transition: all 0.2s; cursor: pointer; display: block; width: 100%; text-align: center; }
-        .quick-sum-btn:active { transform: scale(0.95); background-color: #dbeafe; }
         .ai-header-btn { width: 100%; padding: 12px 15px; background: white; border-radius: 15px; border: 1px solid #e0e7ff; display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; cursor: pointer; transition: all 0.2s; }
-        .ai-header-btn:hover { background: #f5f7ff; }
-        .ai-header-btn h4 { font-size: 14px; font-weight: 800; color: #4338ca; text-transform: uppercase; letter-spacing: 0.05em; } 
         .ai-content-box { background: white; padding: 15px; border-radius: 15px; border: 1px solid #f0f4ff; margin-bottom: 12px; font-size: 14px; color: #475569; line-height: 1.6; position: relative; } 
-        .ai-refresh-btn { position: absolute; top: 12px; right: 12px; font-size: 16px; color: #6366f1; cursor: pointer; transition: transform 0.3s; padding: 5px; }
+        .ai-refresh-btn { position: absolute; top: 12px; right: 12px; font-size: 16px; color: #6366f1; cursor: pointer; padding: 5px; transition: transform 0.3s; }
         .ai-refresh-btn:active { transform: rotate(180deg); }
+        .closing-box { border-left: 4px solid #3b82f6; background-color: #eff6ff; padding: 12px; margin-top: 12px; border-radius: 0 12px 12px 0; color: #1e40af; font-weight: 600; font-size: 13px; }
+        .advice-box { background: #fffbeb; border: 1.5px solid #fde68a; border-radius: 18px; padding: 12px 15px; margin-top: 12px; font-size: 13px; color: #92400e; display: flex; align-items: center; gap: 10px; line-height: 1.5; }
+        .advice-box.success { background: #ecfdf5; border-color: #6ee7b7; color: #065f46; }
     </style>
 </head>
 <body>
     <div class="app-container">
         <div class="header-card">
-            <h1 class="text-2xl font-bold tracking-tight">Convertable Term</h1>
-            <p class="text-base opacity-95 mt-1.5 font-semibold text-center px-4">จองสิทธิ เปลี่ยนแบบประกันได้</p>
+            <h1 class="text-2xl font-bold tracking-tight">Signature Legacy</h1>
         </div>
         <div class="w-full">
             <div onclick="document.getElementById('insuranceConditions').classList.toggle('hidden')" class="bg-blue-50/80 border-b border-blue-100 p-3.5 cursor-pointer hover:bg-blue-100 transition-colors text-center">
@@ -87,18 +75,16 @@
                     <i class="fas fa-caret-down text-blue-400"></i>
                 </h2>
                 <div id="insuranceConditions" class="hidden mt-3 grid grid-cols-1 gap-1 text-[11px] text-blue-800/80 font-medium border-t border-blue-100 pt-2 px-6 text-left space-y-1 pb-1">
-                    <p>• อายุที่รับประกัน: 20 - 60 ปี</p>
-                    <p>• ทุนประกันขั้นต่ำ</p>
-                    <p class="pl-4 font-semibold text-blue-900/70">• เพศหญิง 400,000 บาท</p>
-                    <p class="pl-4 font-semibold text-blue-900/70">• เพศชาย 600,000 บาท</p>
-                    <p class="mt-2 text-blue-900 font-bold bg-yellow-200 block px-1 rounded text-center text-[clamp(8px,2.25vw,10.5px)] whitespace-nowrap overflow-hidden">• เปลี่ยนแบบประกันได้ ในปีที่ 4 ยกเว้น ประกันสุขภาพ/ประกันโรคร้าย</p>
+                    <p>• อายุที่รับประกัน: 0 - 70 ปี</p>
+                    <p>• ทุนประกันขั้นต่ำ: 5,000,000 บาท</p>
+                    <p>• สิทธิประโยชน์มะเร็ง 5 อวัยวะหลัก (30% Advance + 100% Extra)</p>
                 </div>
             </div>
         </div>
         <div class="content-padding">
             <div class="bg-slate-50 p-4 rounded-2xl mb-4 border border-slate-100 shadow-sm">
                 <div class="flex gap-2">
-                    <input type="text" id="textCommand" class="input-box text-[clamp(8px,2.9vw,14px)] text-left px-1.5 min-[375px]:px-3 sm:px-5 flex-1 tracking-tighter sm:tracking-tight" placeholder="ช/ญ + อายุ + ทุนประกัน" onkeypress="handleEnter(event)" oninput="adjustInputFontSize(this)">
+                    <input type="text" id="textCommand" class="input-box text-left px-3 flex-1" placeholder="ช/ญ + อายุ + ทุน + 5/10 ปี" onkeypress="if(event.key==='Enter') processTextCommand()">
                     <button id="voiceBtn" onclick="startVoiceRecognition()" class="bg-white border border-slate-200 text-slate-500 w-12 rounded-2xl flex items-center justify-center active:scale-95 transition-all shadow-sm shrink-0">
                         <i id="voiceIcon" class="fas fa-microphone"></i>
                     </button>
@@ -108,8 +94,8 @@
                 </div>
             </div>
             <div class="flex flex-col items-center w-full">
-                <!-- เมนูคำนวณเบี้ยประกันด้วยตนเอง -->
-                <button onclick="toggleSettings()" class="menu-btn bg-blue-100 text-blue-900 border-blue-200 shadow-sm hover:bg-blue-200 transition-colors h-[90px]">
+                <!-- Manual Calculation Menu -->
+                <button onclick="toggleSection('manualInputs')" class="menu-btn bg-blue-100 text-blue-900 border-blue-200 shadow-sm h-[90px]">
                     <i class="fas fa-sliders-h text-2xl"></i>
                     <span class="text-[1.05rem] whitespace-nowrap">คำนวณเบี้ยประกันด้วยตนเอง</span>
                 </button>
@@ -125,49 +111,47 @@
                         </div>
                         <div>
                             <p class="text-slate-500 text-[10px] font-bold uppercase mb-1.5 tracking-wide">อายุ (ปี)</p>
-                            <input type="number" id="ageInput" value="20" min="20" max="60" class="input-box" oninput="calculate(currentMode)">
+                            <input type="number" id="ageInput" value="30" min="0" max="70" class="input-box" oninput="calculate('sum')">
                         </div>
                     </div>
-                    <!-- ทุนประกัน -->
+                    <div>
+                        <p class="text-slate-500 text-[10px] font-bold uppercase mb-1.5 text-center tracking-wide">แผนประกัน</p>
+                        <div class="flex gap-2">
+                            <button onclick="setPlan('5SLB')" id="btn5SLB" class="flex-1 gender-btn">5SLB</button>
+                            <button onclick="setPlan('10SLB')" id="btn10SLB" class="flex-1 gender-btn active-blue">10SLB</button>
+                        </div>
+                    </div>
                     <div>
                         <p class="text-slate-500 text-[10px] font-bold uppercase mb-1.5 text-center tracking-wide">ทุนประกัน (บาท)</p>
                         <div class="grid grid-cols-5 gap-1.5 mb-2">
-                            <button onclick="setQuickSum(400000)" class="quick-sum-btn">4 แสน</button>
-                            <button onclick="setQuickSum(600000)" class="quick-sum-btn">6 แสน</button>
-                            <button onclick="setQuickSum(1000000)" class="quick-sum-btn">1 ล้าน</button>
-                            <button onclick="setQuickSum(3000000)" class="quick-sum-btn">3 ล้าน</button>
                             <button onclick="setQuickSum(5000000)" class="quick-sum-btn">5 ล้าน</button>
+                            <button onclick="setQuickSum(10000000)" class="quick-sum-btn">10 ล้าน</button>
+                            <button onclick="setQuickSum(20000000)" class="quick-sum-btn">20 ล้าน</button>
+                            <button onclick="setQuickSum(50000000)" class="quick-sum-btn">50 ล้าน</button>
+                            <button onclick="setQuickSum(100000000)" class="quick-sum-btn">100 ล้าน</button>
                         </div>
-                        <input type="text" id="sumInsuredInput" value="1,000,000" class="input-box" oninput="handleSumInput(this)">
-                        
-                        <!-- การแสดงผลเบี้ยประกันแบบ Card Box -->
-                        <div class="mt-4 bg-blue-50 border border-blue-100 rounded-2xl p-4 shadow-sm space-y-3">
-                            <div class="flex justify-between items-center">
-                                <span class="text-[11px] font-bold text-blue-800 uppercase tracking-wide">เบี้ยประกัน (บาท/ปี)</span>
-                                <span id="displayPremium" class="text-xl font-black text-blue-900">0</span>
-                            </div>
-                            <div id="dailyPremiumRow" class="flex justify-between items-center pt-2 border-t border-blue-200/50">
-                                <span class="text-[11px] font-bold text-blue-600 uppercase tracking-wide">เฉลี่ยเพียง (บาท/วัน)</span>
-                                <span id="displayDailyPremium" class="text-lg font-bold text-blue-700">0</span>
-                            </div>
-                        </div>
+                        <input type="text" id="sumInsuredInput" value="10,000,000" class="input-box" oninput="handleSumInput(this)" onblur="checkMinLimit()">
                     </div>
-                    <button onclick="manualTriggerPopup()" class="w-full bg-blue-900 text-white py-4 rounded-2xl font-bold shadow-lg active:scale-95 transition-all text-sm uppercase mt-2">ดูสรุปการคำนวณ & คัดลอก</button>
-
-                    <button onclick="toggleInstallmentDetails()" class="w-full bg-slate-50 border border-slate-200 py-3 rounded-2xl text-[11px] font-bold text-slate-600 flex items-center justify-center gap-2 mt-2 active:bg-slate-100 transition-colors">
+                    <div>
+                        <p class="text-slate-500 text-[10px] font-bold uppercase mb-1.5 text-center tracking-wide">เบี้ยประกันภัย (บาท)</p>
+                        <input type="text" id="premiumInput" class="input-box" value="0" oninput="handlePremiumInput(this)">
+                    </div>
+                    <button onclick="manualTriggerPopup()" class="w-full bg-blue-900 text-white py-4 rounded-2xl font-bold shadow-lg active:scale-95 transition-all text-sm uppercase mt-2">ดูสรุปความคุ้มครองทั้งหมด</button>
+                    
+                    <button onclick="toggleSection('installmentDetails')" class="w-full bg-slate-50 border border-slate-200 py-3 rounded-2xl text-[11px] font-bold text-slate-600 flex items-center justify-center gap-2 mt-2 active:bg-slate-100 transition-colors">
                         <i class="fas fa-credit-card text-blue-800"></i> ตัวเลือกการชำระเงิน
                     </button>
                     <div id="installmentDetails" class="hidden mb-1 mt-2">
                         <div class="flex justify-between items-center bg-blue-50/50 border border-blue-100 p-2.5 rounded-2xl gap-2">
-                            <button onclick="copyInstallment('monthly')" class="text-center flex-1 bg-white border border-blue-100 p-2 rounded-xl active:scale-95 transition-transform shadow-sm hover:bg-blue-50 cursor-pointer">
+                            <button onclick="copyInstallment('monthly')" class="text-center flex-1 bg-white border border-blue-100 p-2 rounded-xl active:scale-95 shadow-sm hover:bg-blue-50">
                                 <p class="text-[9px] text-slate-400 font-bold uppercase mb-1">รายเดือน</p>
                                 <p id="sumMonthly" class="text-[12px] font-bold text-blue-900">0</p>
                             </button>
-                            <button onclick="copyInstallment('3month')" class="text-center flex-1 bg-white border border-blue-100 p-2 rounded-xl active:scale-95 transition-transform shadow-sm hover:bg-blue-50 cursor-pointer">
+                            <button onclick="copyInstallment('3month')" class="text-center flex-1 bg-white border border-blue-100 p-2 rounded-xl active:scale-95 shadow-sm hover:bg-blue-50">
                                 <p class="text-[9px] text-slate-400 font-bold uppercase mb-1">3 เดือน</p>
                                 <p id="sum3Month" class="text-[12px] font-bold text-blue-900">0</p>
                             </button>
-                            <button onclick="copyInstallment('6month')" class="text-center flex-1 bg-white border border-blue-100 p-2 rounded-xl active:scale-95 transition-transform shadow-sm hover:bg-blue-50 cursor-pointer">
+                            <button onclick="copyInstallment('6month')" class="text-center flex-1 bg-white border border-blue-100 p-2 rounded-xl active:scale-95 shadow-sm hover:bg-blue-50">
                                 <p class="text-[9px] text-slate-400 font-bold uppercase mb-1">6 เดือน</p>
                                 <p id="sum6Month" class="text-[12px] font-bold text-blue-900">0</p>
                             </button>
@@ -175,652 +159,401 @@
                     </div>
                 </div>
 
-                <!-- เมนู: ที่ปรึกษาการขาย อัจฉริยะ -->
-                <button onclick="toggleAIAdvisor()" class="menu-btn bg-indigo-50 text-indigo-900 border-indigo-100 shadow-sm hover:bg-indigo-100 transition-colors h-[90px] !px-3">
+                <!-- AI Advisor Menu -->
+                <button onclick="toggleAIAdvisor()" class="menu-btn bg-indigo-50 text-indigo-900 border-indigo-100 shadow-sm h-[90px] mt-4">
                     <i class="fas fa-robot text-indigo-600 text-2xl shrink-0"></i>
-                    <span class="text-[clamp(13px,4vw,1.05rem)] whitespace-nowrap">ที่ปรึกษาการขาย อัจฉริยะ</span>
+                    <span class="text-[1.05rem] whitespace-nowrap">ที่ปรึกษาการขาย อัจฉริยะ</span>
                 </button>
 
                 <div id="aiAdvisorContainer" class="hidden cash-container border-indigo-100 bg-indigo-50/10 p-4">
-                    <div class="ai-header-btn" onclick="toggleAISection('aiIdea')">
+                    <div class="ai-header-btn" onclick="toggleAIInnerSection('aiStats');">
+                        <h4><i class="fas fa-chart-pie mr-2"></i> ข้อมูลสถิติ</h4>
+                        <i class="fas fa-plus text-[8px] text-indigo-300"></i>
+                    </div>
+                    <div id="aiStats" class="hidden ai-content-box">
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-[10px] font-bold text-indigo-400 uppercase tracking-widest">Insight Data</span>
+                            <button onclick="updateAIStats(true)" class="text-indigo-600 hover:text-indigo-800 p-1 flex items-center gap-1 active:scale-90">
+                                <i class="fas fa-sync-alt text-xs"></i>
+                                <span class="text-[9px] font-bold uppercase">เปลี่ยนชุดข้อมูล</span>
+                            </button>
+                        </div>
+                        <div id="aiStatsText">กำลังวิเคราะห์ข้อมูล...</div>
+                    </div>
+                    
+                    <div class="ai-header-btn" onclick="toggleAIInnerSection('aiCost');">
+                        <h4><i class="fas fa-file-invoice-dollar mr-2"></i> ประมาณการค่าใช้จ่าย</h4>
+                        <i class="fas fa-plus text-[8px] text-indigo-300"></i>
+                    </div>
+                    <div id="aiCost" class="hidden ai-content-box">
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-[10px] font-bold text-rose-400 uppercase tracking-widest">Expense Estimation</span>
+                            <button onclick="updateAICosts(true)" class="text-rose-600 hover:text-rose-800 p-1 flex items-center gap-1 active:scale-90">
+                                <i class="fas fa-sync-alt text-xs"></i>
+                                <span class="text-[9px] font-bold uppercase">รีเฟรชราคา</span>
+                            </button>
+                        </div>
+                        <div id="aiCostText">กำลังวิเคราะห์ราคา...</div>
+                    </div>
+                    
+                    <div class="ai-header-btn" onclick="toggleAIInnerSection('aiIdea');">
                         <h4><i class="fas fa-lightbulb mr-2"></i> ไอเดียการขาย</h4>
                         <i class="fas fa-plus text-[8px] text-indigo-300"></i>
                     </div>
-                    <div id="aiIdea" class="block ai-content-box"><i onclick="updateAIIdeas(true)" class="fas fa-sync-alt ai-refresh-btn"></i><p id="aiIdeaText">กำลังวิเคราะห์ข้อมูล...</p></div>
+                    <div id="aiIdea" class="hidden ai-content-box">
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-[10px] font-bold text-amber-500 uppercase tracking-widest">Sales Strategy</span>
+                            <button onclick="updateAIIdeas(true)" class="text-amber-600 hover:text-amber-800 p-1 flex items-center gap-1 active:scale-90">
+                                <i class="fas fa-sync-alt text-xs"></i>
+                                <span class="text-[9px] font-bold uppercase">หมุนไอเดียถัดไป</span>
+                            </button>
+                        </div>
+                        <div id="aiIdeaText">กำลังเตรียมกลยุทธ์...</div>
+                    </div>
                 </div>
 
-                <!-- ระบบ CASH Menu -->
-                <button onclick="toggleCashMenu()" class="menu-btn cash-main-btn shadow-md h-[90px]">
+                <!-- CASH Menu -->
+                <button onclick="toggleCashMenu()" class="menu-btn cash-main-btn shadow-md h-[90px] mt-4">
                     <div class="flex items-center justify-center gap-4">
                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"><rect x="3" y="14" width="4" height="6" rx="1" fill="#94a3b8" /><rect x="10" y="10" width="4" height="10" rx="1" fill="#64748b" /><rect x="17" y="6" width="4" height="14" rx="1" fill="#1e3a8a" /></svg>
                         <span class="text-xl font-bold tracking-[0.25em] text-slate-900 uppercase">CASH</span>
                     </div>
-                    <span class="text-[13px] font-bold tracking-widest mt-1 text-blue-900 text-center">CHUBB Agency Success Howto</span>
+                    <span class="text-[11px] font-bold tracking-widest mt-1 text-blue-900 text-center uppercase">Agency Success Howto</span>
                 </button>
 
                 <div id="cashMenuContainer" class="hidden cash-container">
-                    <button onclick="toggleSection('caseIncomeInputs')" class="sub-menu-btn btn-income"><i class="fas fa-wallet"></i><span>รายได้จากเคสนี้</span></button>
+                    <button onclick="toggleAccordion('caseIncomeInputs')" class="sub-menu-btn btn-income"><i class="fas fa-wallet"></i><span>รายได้จากเคสนี้</span></button>
                     <div id="caseIncomeInputs" class="hidden info-card border-emerald-200 bg-emerald-50/30">
                         <div class="space-y-1">
-                            <div class="income-row"><div class="income-label"><i class="fas fa-coins text-emerald-600"></i><span class="text-emerald-900">คอมมิชชันปีที่ 1</span></div><span id="caseIncomeComm" class="income-value text-emerald-700">0 บาท</span></div>
-                            <div class="income-row"><div class="income-label"><i class="fas fa-calendar-alt text-blue-500"></i><span class="text-emerald-900">โบนัสรายเดือน (MB)</span></div><span id="caseIncomeBonus" class="income-value text-blue-600">0 บาท</span></div>
-                            <div class="income-row border-none"><div class="income-label"><i class="fas fa-award text-violet-500"></i><span class="text-emerald-900">โบนัสครึ่งปี (MYB)</span></div><span id="caseIncomeMYBonus" class="income-value text-violet-600">0 บาท</span></div>
-                            <div class="bg-gradient-to-r from-emerald-500 to-teal-600 p-5 rounded-2xl flex justify-between items-center mt-3 shadow-md">
-                                <span class="text-xs font-bold text-white uppercase tracking-widest">รายได้สุทธิ <span id="caseIncomePercent" class="font-normal opacity-90"></span></span>
-                                <span id="caseIncomeTotal" class="text-[20px] font-black text-white">0 บาท</span>
+                            <div class="income-row"><div class="income-label"><i class="fas fa-coins text-emerald-600"></i><span>คอมมิชชันปีที่ 1</span></div><span id="caseIncomeComm" class="income-value text-emerald-700">0 บาท</span></div>
+                            <div class="income-row"><div class="income-label"><i class="fas fa-calendar-alt text-blue-500"></i><span>โบนัสรายเดือน (MB)</span></div><span id="caseIncomeBonus" class="income-value text-blue-600">0 บาท</span></div>
+                            <div class="income-row border-none"><div class="income-label"><i class="fas fa-award text-violet-500"></i><span>โบนัสครึ่งปี (MYB)</span></div><span id="caseIncomeMYBonus" class="income-value text-violet-600">0 บาท</span></div>
+                            <div class="bg-gradient-to-r from-emerald-500 to-teal-600 p-5 rounded-2xl flex justify-between items-center mt-3 shadow-md text-white">
+                                <span class="text-xs font-bold uppercase tracking-widest">รายได้สุทธิ <span id="caseIncomePercent" class="font-normal opacity-90"></span></span>
+                                <span id="caseIncomeTotal" class="text-[20px] font-black">0 บาท</span>
                             </div>
                         </div>
                     </div>
-                    <button onclick="toggleSection('comInputs')" class="sub-menu-btn btn-com"><i class="fas fa-hand-holding-usd"></i><span>รายได้ที่ได้รับ</span></button>
+
+                    <button onclick="toggleAccordion('comInputs')" class="sub-menu-btn btn-com"><i class="fas fa-hand-holding-usd"></i><span>รายได้ที่ได้รับ</span></button>
                     <div id="comInputs" class="hidden info-card border-amber-200 bg-amber-50/30"><div id="comList"></div></div>
-                    <button onclick="toggleSection('mbInputs')" class="sub-menu-btn btn-mb"><i class="fas fa-gift"></i><span>โบนัสรายเดือน (MB)</span></button>
+
+                    <button onclick="toggleAccordion('mbInputs')" class="sub-menu-btn btn-mb"><i class="fas fa-gift"></i><span>โบนัสรายเดือน (MB)</span></button>
                     <div id="mbInputs" class="hidden info-card border-blue-200 bg-blue-50/30">
                         <p class="text-[10px] font-bold text-blue-900 uppercase mb-3 text-center tracking-wide">ระบุยอดสะสมอื่นในเดือนนี้ (บาท)</p>
-                        <input type="text" id="existingFYCInput" value="0" class="input-box border-blue-200 bg-white text-sm py-3 mb-4" oninput="handleMBInput(this)">
-                        <table class="tier-table mb-table" id="bonusTable">
+                        <input type="text" id="existingFYCInput" value="0" class="input-box border-blue-200 bg-white text-sm py-3 mb-4" oninput="CASH_MODULE.refreshFromUI()">
+                        <table class="tier-table">
                             <tbody><tr id="mb-tier1"><td>8,000 - 16,000</td><td>20%</td></tr><tr id="mb-tier2"><td>16,001 - 32,000</td><td>25%</td></tr><tr id="mb-tier3"><td>32,001 - 64,000</td><td>30%</td></tr><tr id="mb-tier4"><td>64,001 ขึ้นไป</td><td>35%</td></tr></tbody>
                         </table>
-                        <div class="bg-white border border-blue-200 p-5 rounded-2xl mt-4 shadow-sm space-y-4">
-                            <div class="flex justify-between items-center text-[13px] text-blue-500 font-bold"><span>โบนัสสะสม</span><span id="mbExistingCalc" class="text-sm font-bold text-blue-700">0 บาท</span></div>
-                            <div class="flex justify-between items-center text-[13px] text-emerald-500 font-bold"><span>โบนัสเคสใหม่</span><span id="mbCaseCalc" class="text-sm font-bold text-emerald-600">0 บาท</span></div>
-                            <div class="border-t border-blue-100 pt-3">
-                                <div class="flex justify-between items-center gap-2">
-                                    <span class="text-[12px] font-bold text-blue-900 leading-tight">รวมโบนัสปัจจุบัน</span>
-                                    <span id="mbCalculatedBonus" class="text-lg font-black text-blue-600 shrink-0 text-right">0 บาท</span>
-                                </div>
-                                <div class="text-right mt-1"><span id="mbFormula" class="text-[10px] text-blue-400 font-semibold break-words"></span></div>
+                        <div class="bg-white border border-blue-200 p-5 rounded-2xl mt-4 shadow-sm space-y-2">
+                            <div class="flex justify-between items-center text-[11px] text-blue-500 font-bold"><span>โบนัสสะสมเดิม</span><span id="mbExistingCalc" class="font-bold text-blue-700">0 บาท</span></div>
+                            <div class="flex justify-between items-center text-[11px] text-emerald-500 font-bold"><span>โบนัสเฉพาะเคสนี้</span><span id="mbCaseCalc" class="font-bold text-emerald-600">0 บาท</span></div>
+                            <div class="border-t border-blue-100 pt-2 flex justify-between items-center">
+                                <span class="text-[12px] font-bold text-blue-900">รวมโบนัสทั้งหมด</span>
+                                <span id="mbCalculatedBonus" class="text-lg font-black text-blue-600">0 บาท</span>
                             </div>
-                            <div class="flex justify-between items-center mt-2 pt-2 border-t border-blue-50"><span class="text-[13px] font-bold text-emerald-600">ค่าคอมเคสปัจจุบัน</span><span id="mbCaseComm" class="text-sm font-black text-emerald-600">0 บาท</span></div>
                         </div>
-                        <div id="mbAdvice" class="advice-box shadow-sm"><i class="fas fa-lightbulb text-amber-500"></i><span id="mbAdviceText">กำลังประมวลผลคำแนะนำ...</span></div>
+                        <div id="mbAdvice" class="advice-box shadow-sm"><i class="fas fa-lightbulb text-amber-500"></i><span id="mbAdviceText">กำลังประมวลผล...</span></div>
                     </div>
-                    <button onclick="toggleSection('mybInputs')" class="sub-menu-btn btn-myb"><i class="fas fa-calendar-check"></i><span>โบนัสครึ่งปี (MYB)</span></button>
+
+                    <button onclick="toggleAccordion('mybInputs')" class="sub-menu-btn btn-myb"><i class="fas fa-calendar-check"></i><span>โบนัสครึ่งปี (MYB)</span></button>
                     <div id="mybInputs" class="hidden info-card border-violet-200 bg-violet-50/30">
-                        <p class="text-[10px] font-bold text-violet-900 uppercase mb-3 text-center tracking-wide">ระบุยอดสะสมครึ่งปีเดิม (บาท)</p>
-                        <input type="text" id="existingHalfYearFYCInput" value="0" class="input-box border-violet-200 bg-white text-sm py-3 mb-4" oninput="handleMYBInput(this)">
-                        <table class="tier-table myb-table" id="mybTable">
+                        <p class="text-[10px] font-bold text-violet-900 uppercase mb-3 text-center tracking-wide">ยอดสะสมครึ่งปีเดิม (บาท)</p>
+                        <input type="text" id="existingHalfYearFYCInput" value="0" class="input-box border-violet-200 bg-white text-sm py-3 mb-4" oninput="CASH_MODULE.refreshFromUI()">
+                        <table class="tier-table">
                             <tbody><tr id="myb-tier1"><td>40,000 - 60,000</td><td>17.5%</td></tr><tr id="myb-tier2"><td>60,001 - 100,000</td><td>20.0%</td></tr><tr id="myb-tier3"><td>100,001 - 150,000</td><td>22.5%</td></tr><tr id="myb-tier4"><td>150,001 - 200,000</td><td>25.0%</td></tr><tr id="myb-tier5"><td>200,001 - 250,000</td><td>27.5%</td></tr><tr id="mb-tier6"><td>250,001 - 300,000</td><td>30.0%</td></tr><tr id="myb-tier7"><td>300,001 - 400,000</td><td>32.5%</td></tr><tr id="myb-tier8"><td>400,001 ขึ้นไป</td><td>35.0%</td></tr></tbody>
                         </table>
-                        <div class="bg-white border border-violet-200 p-5 rounded-2xl mt-4 shadow-sm space-y-4">
-                            <div class="flex justify-between items-center text-[13px] text-violet-500 font-bold"><span>โบนัสสะสม</span><span id="mybExistingCalc" class="text-sm font-bold text-violet-700">0 บาท</span></div>
-                            <div class="flex justify-between items-center text-[13px] text-emerald-500 font-bold"><span>โบนัสเคสใหม่</span><span id="mybCaseCalc" class="text-sm font-bold text-emerald-600">0 บาท</span></div>
-                            <div class="border-t border-violet-100 pt-3">
-                                <div class="flex justify-between items-center gap-2">
-                                    <span class="text-[12px] font-bold text-blue-900 leading-tight">รวมโบนัสปัจจุบัน</span>
-                                    <span id="mybCalculatedBonus" class="text-lg font-black text-violet-600 shrink-0 text-right">0 บาท</span>
-                                </div>
-                                <div class="text-right mt-1"><span id="mybFormula" class="text-[10px] text-violet-400 font-semibold break-words"></span></div>
-                            </div>
-                            <div class="flex justify-between items-center mt-2 pt-2 border-t border-blue-50"><span class="text-[13px] font-bold text-emerald-600">ค่าคอมเคสปัจจุบัน</span><span id="mybCaseComm" class="text-sm font-black text-emerald-600">0 บาท</span></div>
+                        <div class="bg-white border border-violet-200 p-4 rounded-2xl mt-4 text-center">
+                            <p class="text-[10px] font-bold uppercase text-violet-400">โบนัสครึ่งปีสะสมรวม</p>
+                            <p id="mybCalculatedBonus" class="text-xl font-black text-violet-600">0 บาท</p>
                         </div>
-                        <div id="mybAdvice" class="advice-box shadow-sm"><i class="fas fa-chart-line text-violet-500"></i><span id="mybAdviceText">กำลังประมวลผลคำแนะนำ...</span></div>
+                        <div id="mybAdvice" class="advice-box shadow-sm mt-4"><i class="fas fa-chart-line text-violet-500"></i><span id="mybAdviceText">กำลังประมวลผล...</span></div>
                     </div>
-                    <button onclick="toggleSection('nabInputs')" class="sub-menu-btn btn-nab"><i class="fas fa-star"></i><span>โบนัสตัวแทนใหม่ (NAB)</span></button>
+
+                    <button onclick="toggleAccordion('nabInputs')" class="sub-menu-btn btn-nab"><i class="fas fa-star"></i><span>โบนัสตัวแทนใหม่ (NAB)</span></button>
                     <div id="nabInputs" class="hidden info-card border-cyan-200 bg-cyan-50/30">
-                        <select id="nabPhaseSelect" class="input-box text-sm py-2.5 mb-4 bg-white border-cyan-200 text-cyan-900" onchange="updateNABDisplay()">
+                        <select id="nabPhaseSelect" class="input-box text-sm py-2.5 mb-4 bg-white border-cyan-200" onchange="CASH_MODULE.refreshFromUI()">
                             <option value="p1">เดือนที่ 1 - เดือนที่ 3</option>
                             <option value="p2">เดือนที่ 4 - เดือนที่ 6</option>
                         </select>
                         <div class="grid grid-cols-2 gap-3 mb-4 text-center">
-                            <div><p class="text-[9px] font-bold uppercase text-cyan-700 mb-1">FYC สะสมเดิม</p><input type="text" id="existingNABFYC" value="0" class="input-box text-sm py-2.5 bg-white border-cyan-200" oninput="handleNABFYCInput(this)"></div>
-                            <div><p class="text-[9px] font-bold uppercase text-cyan-700 mb-1">จำนวนรายสะสมเดิม</p><input type="number" id="existingNABCases" value="0" class="input-box text-sm py-2.5 bg-white border-cyan-200" oninput="updateNABDisplay()"></div>
+                            <div><p class="text-[9px] font-bold uppercase text-cyan-700 mb-1">FYC สะสมเดิม</p><input type="text" id="existingNABFYC" value="0" class="input-box text-xs py-2.5 bg-white border-cyan-200" oninput="CASH_MODULE.refreshFromUI()"></div>
+                            <div><p class="text-[9px] font-bold uppercase text-cyan-700 mb-1">จำนวนรายสะสม</p><input type="number" id="existingNABCases" value="0" class="input-box text-xs py-2.5 bg-white border-cyan-200" oninput="CASH_MODULE.refreshFromUI()"></div>
                         </div>
-                        <table class="tier-table mb-4" id="nabTierTable"><tbody id="nabTierBody"></tbody></table>
                         <div class="bg-white p-6 rounded-2xl border border-cyan-200 shadow-sm text-center">
-                            <div class="flex justify-between items-center mb-3 pb-3 border-b border-cyan-100"><span class="text-[13px] font-bold text-emerald-600">ค่าคอมเคสปัจจุบัน</span><span id="nabCaseComm" class="text-sm font-black text-emerald-600">0 บาท</span></div>
                             <p class="text-xs font-bold text-cyan-800 uppercase tracking-widest mb-1">โบนัสพิเศษ (NAB)</p>
                             <p id="nabCalculatedBonus" class="text-3xl font-black text-cyan-600 my-2">0 บาท</p>
                         </div>
-                        <div id="nabAdvice" class="advice-box shadow-sm mt-4 text-sm font-medium"><i class="fas fa-lightbulb text-cyan-500 text-lg"></i><span id="nabAdviceText" class="flex-1">กำลังประมวลผลคำแนะนำ...</span></div>
+                        <div id="nabAdvice" class="advice-box shadow-sm mt-4 text-sm font-medium"><i class="fas fa-lightbulb text-cyan-500 text-lg"></i><span id="nabAdviceText" class="flex-1">กำลังประมวลผล...</span></div>
                     </div>
                 </div>
-                <div class="company-footer">&copy; Satawat Buttrakas</div>
             </div>
         </div>
     </div>
+
+    <!-- Result Modal -->
     <div id="resultModal" class="modal-overlay" onclick="closeModal()">
         <div class="modal-content-card" onclick="event.stopPropagation()">
-            <div class="bg-blue-900 p-8 text-center text-white flex-shrink-0 shadow-lg"><i class="fas fa-check-circle text-5xl mb-4 text-emerald-400"></i><h3 class="text-xl font-bold tracking-wide">สรุปผลการคำนวณ</h3></div>
+            <div class="bg-blue-900 p-8 text-center text-white shrink-0 shadow-lg"><i class="fas fa-check-circle text-5xl mb-4 text-emerald-400"></i><h3 class="text-xl font-bold tracking-wide">สรุปผลการคำนวณ</h3></div>
             <div class="modal-scroll-area">
                 <div class="grid grid-cols-3 gap-3 mb-6">
                     <div class="text-center p-3.5 bg-slate-50 rounded-2xl border border-slate-100"><span class="text-[9px] text-slate-400 font-bold uppercase block mb-1">เพศ</span><span id="modalGender" class="text-sm font-bold text-blue-900">-</span></div>
                     <div class="text-center p-3.5 bg-slate-50 rounded-2xl border border-slate-100"><span class="text-[9px] text-slate-400 font-bold uppercase block mb-1">อายุ</span><span id="modalAge" class="text-sm font-bold text-blue-900">-</span></div>
-                    <div class="text-center p-3.5 bg-slate-50 rounded-2xl border border-slate-100"><span class="text-[9px] text-slate-400 font-bold uppercase block mb-1">ระยะสัญญา</span><span id="modalYears" class="text-sm font-bold text-blue-900">-</span></div>
+                    <div class="text-center p-3.5 bg-slate-50 rounded-2xl border border-slate-100"><span class="text-[9px] text-slate-400 font-bold uppercase block mb-1">ระยะชำระ</span><span id="modalYears" class="text-sm font-bold text-blue-900">-</span></div>
                 </div>
                 <div class="space-y-4">
-                    <div class="flex justify-between items-center p-5 bg-blue-50 rounded-2xl border border-blue-100"><span class="text-xs text-blue-700 font-bold uppercase tracking-wider">เบี้ยประกันภัยรายปี</span><span id="modalPremium" class="text-base font-bold text-blue-900">0 บาท</span></div>
-                    <div class="flex justify-between items-center p-5 bg-emerald-50 rounded-2xl border border-emerald-100"><span class="text-xs text-emerald-700 font-bold uppercase tracking-wider">ทุนประกัน</span><span id="modalSum" class="text-base font-bold text-emerald-700">0.00 บาท</span></div>
+                    <div class="flex justify-between items-center p-5 bg-blue-50 rounded-2xl border border-blue-100"><span class="text-xs text-blue-700 font-bold uppercase tracking-wider">เบี้ยประกันภัย</span><span id="modalPremium" class="text-base font-bold text-blue-900">0 บาท</span></div>
+                    <div class="flex justify-between items-center p-5 bg-emerald-50 rounded-2xl border border-emerald-100"><span class="text-xs text-emerald-700 font-bold uppercase tracking-wider">ทุนประกัน</span><span id="modalSum" class="text-base font-bold text-emerald-700">0 บาท</span></div>
+                    <div class="flex flex-col p-5 bg-indigo-50 rounded-2xl border border-indigo-100">
+                        <span class="text-xs text-indigo-700 font-bold uppercase tracking-wider leading-tight">ความคุ้มครองชีวิต (จากไปหรือครบสัญญา)</span>
+                        <div class="flex justify-between items-end mt-1"><span class="text-xs text-indigo-700 font-bold">จ่าย</span><span id="modalMaturity" class="text-base font-bold text-indigo-900">0 บาท</span></div>
+                    </div>
                 </div>
                 <button onclick="handleCopyAndClose()" class="w-full bg-blue-900 text-white py-5 rounded-2xl font-bold mt-8 shadow-xl flex items-center justify-center gap-3 active:scale-95 transition-all text-sm uppercase tracking-wider"><i class="fas fa-copy"></i> คัดลอก & ปิด</button>
             </div>
         </div>
     </div>
-    <div id="definitionModal" class="fixed inset-0 z-[700] flex items-center justify-center p-4 bg-slate-900/80 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300" onclick="closeDefinition()">
-        <div class="bg-white/95 backdrop-blur-md w-full max-w-[92vw] md:max-w-md rounded-[40px] shadow-2xl transform scale-95 transition-transform duration-300 flex flex-col max-h-[90vh]" id="defModalContent" onclick="event.stopPropagation()">
-            <div class="p-6 pb-0 flex justify-between items-start">
-                <div class="w-12 h-12 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-2xl shrink-0"><i class="fas fa-book-medical"></i></div>
-                <button onclick="closeDefinition()" class="text-slate-400 hover:text-slate-600 text-3xl w-10 h-10 flex items-center justify-center rounded-full bg-slate-100 leading-none">&times;</button>
-            </div>
-            <div class="px-6 pt-4 overflow-y-auto flex-1 custom-scrollbar">
-                <h3 id="defTitle" class="text-lg font-bold text-blue-900 mb-2 leading-tight"></h3>
-                <div class="w-16 h-1.5 bg-blue-500 rounded-full mb-4"></div>
-                <div id="defDescription" class="text-[13px] text-slate-700 leading-relaxed font-medium whitespace-pre-wrap pb-4"></div>
-            </div>
-            <div class="p-6 pt-0">
-                <button onclick="closeDefinition()" class="w-full py-4 bg-blue-900 hover:bg-blue-800 text-white font-bold rounded-2xl active:scale-95 transition-transform shadow-lg">ปิดหน้าต่างนี้</button>
-            </div>
-        </div>
-    </div>
+
     <script>
-        const setText = (id, text) => { const el = document.getElementById(id); if (el) el.innerText = text; };
-        const formatNum = (num) => { const rounded = Math.round(num * 100) / 100; return Number.isInteger(rounded) ? rounded.toLocaleString() : rounded.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2}); };
-        let currentPlan = '20CX', currentGender = 'male', lastCalculationData = null, currentMode = 'sum';
-        const COM_RATES = { "10CX": [0.30, 0.25, 0.15, 0.05, 0.05, 0.05, 0.025, 0.025], "20CX": [0.30, 0.25, 0.15, 0.05, 0.05, 0.05, 0.025, 0.025] };
-        
+        // --- 1. Global State & Constants ---
+        let currentPlan = '10SLB';
+        let currentGender = 'male';
+        let lastCalculationData = null;
+        let currentMode = 'sum';
+
         const LIFE_RATES = { 
-            "10CX": { 
-                "male": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4.30,4.40,4.40,4.50,4.50,4.60,4.70,4.80,4.90,5.00,5.10,5.30,5.40,5.60,5.80,6.00,6.30,6.50,6.80,7.20,7.50,7.90,8.30,8.80,9.30,9.80,10.40,11.10,11.80,12.50,13.40,14.30,15.40,16.60,17.90,19.40,21.10,22.90,25.10,27.50,30.20,0,0,0,0,0], 
-                "female": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2.80,2.80,2.80,2.80,2.80,2.90,2.90,2.90,3.00,3.00,3.10,3.10,3.20,3.30,3.40,3.50,3.60,3.70,3.90,4.00,4.20,4.40,4.60,4.80,5.00,5.30,5.60,5.90,6.30,6.70,7.20,7.80,8.40,9.10,9.90,10.80,11.80,13.00,14.30,15.90,17.70,0,0,0,0,0] 
+            "5SLB": { 
+                "male": [20.38, 20.97, 22.19, 23.21, 24.22, 25.35, 26.58, 27.83, 28.79, 29.76, 30.73, 31.70, 32.67, 33.64, 34.61, 35.58, 36.80, 38.04, 39.25, 40.49, 41.64, 42.85, 44.09, 45.32, 46.55, 47.78, 48.83, 49.88, 50.93, 51.98, 52.70, 54.38, 55.97, 57.65, 59.87, 61.57, 63.54, 65.84, 68.30, 69.80, 72.87, 75.34, 77.74, 80.56, 83.42, 86.30, 89.02, 91.83, 94.55, 97.30, 101.06, 103.81, 106.56, 109.32, 112.21, 117.99, 120.82, 124.34, 127.13, 131.30, 134.51, 135.40, 138.55, 141.82, 146.40, 149.61, 154.36, 159.24, 164.25, 169.41, 174.71], 
+                "female": [16.39, 17.00, 18.12, 19.07, 20.02, 20.99, 22.07, 23.07, 23.85, 24.62, 25.46, 26.23, 26.99, 27.75, 28.59, 29.35, 30.43, 31.20, 31.96, 32.80, 33.92, 34.69, 35.46, 36.32, 37.08, 39.03, 39.81, 40.60, 41.47, 42.25, 43.85, 45.45, 46.95, 48.52, 50.02, 51.87, 53.81, 55.67, 57.63, 59.57, 61.72, 63.99, 66.26, 68.80, 71.47, 74.18, 76.88, 79.51, 82.23, 85.00, 87.79, 90.89, 94.03, 97.09, 100.30, 106.63, 110.85, 115.07, 117.75, 121.57, 124.15, 125.28, 128.31, 132.47, 135.55, 139.91, 143.10, 147.70, 153.81, 158.72, 163.77] 
             }, 
-            "20CX": { 
-                "male": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,4.50,4.60,4.70,4.80,4.90,5.00,5.20,5.30,5.50,5.70,6.00,6.20,6.50,6.80,7.10,7.50,7.80,8.30,8.70,9.20,9.80,10.40,11.10,11.80,12.60,13.60,14.60,15.70,17.00,18.40,19.90,21.70,23.60,25.80,28.20,30.80,33.80,37.00,40.60,44.50,46.20,0,0,0,0,0], 
-                "female": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2.70,2.80,2.80,2.90,2.90,3.00,3.00,3.10,3.20,3.30,3.40,3.50,3.60,3.70,3.90,4.10,4.30,4.50,4.70,5.00,5.30,5.60,6.00,6.40,6.90,7.40,8.00,8.70,9.40,10.30,11.40,12.50,13.90,15.40,17.20,19.20,21.40,23.90,26.70,29.80,33.20,0,0,0,0,0] 
+            "10SLB": { 
+                "male": [15.82, 16.25, 16.72, 17.22, 17.74, 18.27, 18.77, 19.30, 19.84, 20.42, 21.02, 21.65, 22.30, 22.97, 23.64, 24.34, 24.78, 25.22, 25.80, 26.26, 26.73, 27.34, 27.84, 28.36, 28.90, 29.79, 30.39, 31.02, 31.69, 32.37, 33.11, 34.04, 34.83, 35.68, 36.55, 38.10, 39.05, 40.35, 41.30, 42.82, 45.31, 46.10, 46.89, 48.05, 49.37, 50.50, 51.98, 53.49, 55.07, 56.72, 59.34, 61.15, 63.02, 64.99, 67.05, 69.55, 71.81, 74.19, 76.68, 79.33, 80.77, 81.73, 83.06, 84.42, 85.77, 87.13, 88.60, 91.54, 95.46, 100.36, 107.33], 
+                "female": [12.67, 12.97, 13.31, 13.66, 14.05, 14.45, 14.88, 15.33, 15.79, 16.29, 16.80, 17.34, 17.89, 18.47, 18.86, 19.26, 19.78, 20.21, 20.65, 21.11, 21.58, 22.54, 23.28, 24.11, 24.55, 25.31, 25.81, 26.33, 26.89, 27.45, 28.65, 29.30, 29.98, 30.68, 31.43, 32.90, 33.78, 34.77, 35.86, 37.00, 38.59, 39.47, 40.38, 41.34, 42.39, 43.62, 44.88, 46.23, 47.65, 49.13, 51.20, 52.82, 54.53, 56.32, 58.18, 60.44, 62.50, 64.63, 66.88, 69.25, 71.72, 73.97, 76.71, 79.50, 81.36, 82.41, 83.88, 86.82, 90.74, 95.64, 101.52] 
             } 
         };
-        const CI_RATES = { 
-            "10CX": { 
-                "male": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], 
-                "female": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] 
-            }, 
-            "20CX": { 
-                "male": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], 
-                "female": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2.70,2.80,2.80,2.90,2.90,3.00,3.00,3.10,3.20,3.30,3.40,3.50,3.60,3.70,3.90,4.10,4.30,4.50,4.70,5.00,5.30,5.60,6.00,6.40,6.90,7.40,8.00,8.70,9.40,10.30,11.40,12.50,13.90,15.40,17.20,19.20,21.40,23.90,26.70,29.80,33.20,0,0,0,0,0] 
-            } 
+
+        // --- 2. CASH MODULE ---
+        const CASH_MODULE = {
+            CONFIG: {
+                MB_TIERS: [
+                    { min: 8000, max: 16000, rate: 0.20, id: "mb-tier1" },
+                    { min: 16001, max: 32000, rate: 0.25, id: "mb-tier2" },
+                    { min: 32001, max: 64000, rate: 0.30, id: "mb-tier3" },
+                    { min: 64001, max: Infinity, rate: 0.35, id: "mb-tier4" }
+                ],
+                MYB_TIERS: [
+                    { min: 40000, max: 60000, rate: 0.175, id: "myb-tier1" },
+                    { min: 60001, max: 100000, rate: 0.20, id: "myb-tier2" },
+                    { min: 100001, max: 150000, rate: 0.225, id: "myb-tier3" },
+                    { min: 150001, max: 200000, rate: 0.25, id: "myb-tier4" },
+                    { min: 200001, max: 250000, rate: 0.275, id: "myb-tier5" },
+                    { min: 250001, max: 300000, rate: 0.30, id: "mb-tier6" },
+                    { min: 300001, max: 400000, rate: 0.325, id: "myb-tier7" },
+                    { min: 400001, max: Infinity, rate: 0.35, id: "myb-tier8" }
+                ]
+            },
+            STATE: { currentMB: 0, currentMYB: 0, currentNAB: 0, lastMaxMB: 0, lastMaxMYB: 0 },
+            refreshFromUI: function() {
+                if(!lastCalculationData) return;
+                const rates = getCommissionRateArray(currentPlan, lastCalculationData.age);
+                this.refresh(lastCalculationData.premium, rates[0], rates);
+            },
+            refresh: function(premium, firstYearRate, allRates) {
+                const fyc = Math.round(premium * firstYearRate);
+                this.updateMB(fyc); this.updateMYB(fyc); this.updateNAB(fyc); this.updateCommissionListUI(premium, allRates);
+                const total = fyc + this.STATE.currentMB + this.STATE.currentMYB + this.STATE.currentNAB;
+                setText('caseIncomeComm', fyc.toLocaleString() + " บาท");
+                setText('caseIncomeBonus', Math.round(this.STATE.currentMB).toLocaleString() + " บาท");
+                setText('caseIncomeMYBonus', Math.round(this.STATE.currentMYB).toLocaleString() + " บาท");
+                setText('caseIncomeTotal', total.toLocaleString() + " บาท");
+                setText('caseIncomePercent', "(" + ((total / premium) * 100).toFixed(1) + "%)");
+            },
+            updateMB: function(newFYC) {
+                const existing = this.getInputValue('existingFYCInput'); const totalFYC = newFYC + existing;
+                let curIdx = -1;
+                this.CONFIG.MB_TIERS.forEach((t, i) => {
+                    const el = document.getElementById(t.id);
+                    if(el) { el.classList.remove("active", "hidden"); if (totalFYC > t.max && i < this.CONFIG.MB_TIERS.length - 1) el.classList.add('hidden'); if (totalFYC >= t.min) curIdx = i; }
+                });
+                const rate = curIdx >= 0 ? this.CONFIG.MB_TIERS[curIdx].rate : 0;
+                const existIdx = this.CONFIG.MB_TIERS.findLastIndex(t => existing >= t.min);
+                const existRate = existIdx >= 0 ? this.CONFIG.MB_TIERS[existIdx].rate : 0;
+                this.STATE.currentMB = Math.round(totalFYC * rate) - Math.round(existing * existRate);
+                if (curIdx >= 0) document.getElementById(this.CONFIG.MB_TIERS[curIdx].id)?.classList.add("active");
+                setText('mbExistingCalc', Math.round(existing * existRate).toLocaleString() + " บาท");
+                setText('mbCaseCalc', Math.round(this.STATE.currentMB).toLocaleString() + " บาท");
+                setText('mbCalculatedBonus', Math.round(totalFYC * rate).toLocaleString() + " บาท");
+                const adv = document.getElementById('mbAdviceText'); if(adv) { let n = this.CONFIG.MB_TIERS[curIdx+1]?.min || 0; adv.innerHTML = n > 0 ? `ขาดอีก <b>${(n - totalFYC).toLocaleString()} บาท</b> จะได้โบนัสเรทถัดไป!` : `รับโบนัสสูงสุด 35% แล้ว!`; }
+            },
+            updateMYB: function(newFYC) {
+                const existing = this.getInputValue('existingHalfYearFYCInput'); const totalFYC = newFYC + existing;
+                let curIdx = -1;
+                this.CONFIG.MYB_TIERS.forEach((t, i) => {
+                    const el = document.getElementById(t.id);
+                    if(el) { el.classList.remove("active", "hidden"); if (totalFYC > t.max && i < this.CONFIG.MYB_TIERS.length - 1) el.classList.add('hidden'); if (totalFYC >= t.min) curIdx = i; }
+                });
+                const rate = curIdx >= 0 ? this.CONFIG.MYB_TIERS[curIdx].rate : 0;
+                const existIdx = this.CONFIG.MYB_TIERS.findLastIndex(t => existing >= t.min);
+                const existRate = existIdx >= 0 ? this.CONFIG.MYB_TIERS[existIdx].rate : 0;
+                this.STATE.currentMYB = Math.round(totalFYC * rate) - Math.round(existing * existRate);
+                if (curIdx >= 0) document.getElementById(this.CONFIG.MYB_TIERS[curIdx].id)?.classList.add("active");
+                setText('mybCalculatedBonus', Math.round(totalFYC * rate).toLocaleString() + " บาท");
+                const adv = document.getElementById('mybAdviceText'); if(adv) { let n = this.CONFIG.MYB_TIERS[curIdx+1]?.min || 0; adv.innerHTML = n > 0 ? `ขาดอีก <b>${(n - totalFYC).toLocaleString()} บาท</b> เพื่ออัปเลเวล!` : `รับโบนัสสูงสุด 35% แล้ว!`; }
+            },
+            updateNAB: function(newFYC) {
+                const existing = this.getInputValue('existingNABFYC'); const cases = (parseInt(document.getElementById('existingNABCases')?.value) || 0) + 1;
+                const totalFYC = newFYC + existing; const phase = document.getElementById('nabPhaseSelect')?.value || 'p1';
+                let tiers = phase === 'p1' ? [{f:20000, c:3, b:6000}, {f:50000, c:5, b:15000}] : [{f:40000, c:5, b:10000}, {f:100000, c:10, b:25000}];
+                let bonus = 0; tiers.forEach(t => { if(totalFYC >= t.f && cases >= t.c) bonus = t.b; });
+                this.STATE.currentNAB = bonus; setText('nabCalculatedBonus', bonus.toLocaleString() + " บาท");
+                const adv = document.getElementById('nabAdviceText'); if(adv) adv.innerHTML = cases < 3 ? `สะสมอีก <b>${3 - cases} ราย</b> จะเริ่มมีสิทธิ์รับ NAB` : `คุณสมบัติจำนวนรายครบแล้ว`;
+            },
+            updateCommissionListUI: function(premium, rates) {
+                const el = document.getElementById('comList'); if(!el) return;
+                let html = '', total = 0;
+                rates.forEach((r, i) => { let amt = Math.round(premium * r); total += amt; html += `<div class="com-item-row"><div class="com-year-pill">ปีที่ ${i+1}</div><div class="com-percent-label">${(r*100).toFixed(2)}%</div><div class="com-amount-value">${amt.toLocaleString()} ฿</div></div>`; });
+                html += `<div class="com-item-row" style="border-top:1px dashed #fbbf24; margin-top:5px; padding-top:10px;"><div class="com-percent-label">รวมคอมมิชชันตลอดสัญญา</div><div class="com-amount-value" style="color:#d97706; font-size:1.1rem">${total.toLocaleString()} ฿</div></div>`;
+                el.innerHTML = html;
+            },
+            getInputValue: function(id) { const el = document.getElementById(id); return el ? parseFloat(el.value.replace(/,/g, '')) || 0 : 0; },
+            showCongrats: function(type, value) {
+                const p = document.createElement('div'); p.className = "fixed inset-0 z-[600] flex items-center justify-center p-6 bg-black/60 backdrop-blur-sm";
+                p.innerHTML = `<div class="bg-white rounded-[35px] p-8 text-center shadow-2xl max-w-xs w-full"><div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-5"><i class="fas fa-trophy text-3xl"></i></div><h2 class="text-xl font-bold mb-2">ยินดีด้วย!</h2><p class="text-slate-500 text-sm mb-6">สะสมถึงระดับสูงสุด!<br>รับ${type} <span class="text-emerald-600 font-bold">${value}</span></p><button onclick="this.parentElement.parentElement.remove()" class="w-full bg-blue-900 text-white py-4 rounded-2xl font-bold">ยอดเยี่ยม</button></div>`;
+                document.body.appendChild(p);
+            }
         };
-        const aiPool = {
-            ideas_adult: [
-                "<strong>กลยุทธ์ \"จองสิทธิ์สุขภาพอมตะ\":</strong><br>\"คุณลูกค้าครับ วันนี้สุขภาพดีเรามีสิทธิ์เลือกประกัน แต่วันที่สุขภาพเปลี่ยน ประกันจะเป็นคนเลือกเรา แผนนี้คือการ 'จองสิทธิ์' ในการเปลี่ยนเป็นแบบประกันสะสมทรัพย์หรือเกษียณในอนาคตได้ทันที โดยไม่ต้องตรวจสุขภาพใหม่ แม้ว่าวันนั้นคุณลูกค้าจะมีประวัติสุขภาพไปแล้วก็ตามครับ\"<br><br><div class='bg-indigo-50 p-2 rounded-lg border-l-4 border-indigo-500'><strong>บทปิดการขาย:</strong><br>\"ล็อคสิทธิ์ในการเป็น 'คนสุขภาพดี' ไว้ตลอดกาลด้วยลายเซ็นในวันนี้เลยนะครับ\"</div>",
-                "<strong>กลยุทธ์ \"การันตีค่าความสามารถ\":</strong><br>\"ถ้าคุณลูกค้าทำงานได้ปีละ 1 ล้าน อีก 20 ปีข้างหน้า คุณลูกค้าจะมีมูลค่าตัวสูงถึง 20 ล้านบาท แผนนี้คือการทำ 'ประกันรายได้' ให้กับครอบครัว เพื่อการันตีว่าไม่ว่าจะเกิดอะไรขึ้น เงิน 20 ล้านก้อนนี้จะถึงมือคนที่คุณรักแน่นอนครับ\"<br><br><div class='bg-indigo-50 p-2 rounded-lg border-l-4 border-indigo-500'><strong>บทปิดการขาย:</strong><br>\"อย่าปล่อยให้มูลค่าตัวที่มหาศาลของคุณลูกค้าต้องเผชิญความเสี่ยงเพียงลำพัง ให้แผนนี้ช่วยดูแลความมั่งคั่งให้ครอบครัวนะครับ\"</div>",
-                "<strong>กลยุทธ์ \"พินัยกรรมเงินสดทันใจ\":</strong><br>\"พินัยกรรมทั่วไปต้องรอโอนมรดกเป็ปีและมีค่าธรรมเนียม แต่พินัยกรรมฉบับนี้คือ 'เงินสดก้อนใหญ่' ที่จะโอนตรงถึงมือผู้รับผลประโยชน์ทันที เป็นเงินสะอาดที่ไม่มีใครแตะต้องได้นอกจากคนที่คุณลูกค้าเลือกครับ\"<br><br><div class='bg-indigo-50 p-2 rounded-lg border-l-4 border-indigo-500'><strong>บทปิดการขาย:</strong><br>\"สร้างกองมรดกเงินสดหลักล้านด้วยเงินออมเพียงหลักพันต่อเดือน เริ่มต้นวันนี้เลยนะครับ\"</div>",
-                "<strong>กลยุทธ์ \"สะพานเชื่อมสู่แผนเกษียณ\":</strong><br>\"ตอนนี้คุณลูกค้าอาจเน้นคุ้มครองสูงด้วยเบี้ยที่ถูกที่สุด แต่เมื่อรายได้เพิ่มขึ้นและอายุมากขึ้น แผนนี้เปิดโอกาสให้คุณลูกค้าเปลี่ยนเป็น 'แผนออมเพื่อเกษียณ' ได้ในปีที่ 4 โดยใช้ฐานสุขภาพของวันแรกที่ทำสัญญา ซึ่งคุ้มค่าและได้เปรียบที่สุดครับ\"<br><br><div class='bg-indigo-50 p-2 rounded-lg border-l-4 border-indigo-500'><strong>บทปิดการขาย:</strong><br>\"เริ่มต้นด้วยแผนที่ยืดหยุ่นที่สุด เพื่ออนาคตที่มั่นคงที่สุด สะดวกชำระเป็นรายเดือนหรือรายปีดีครับ?\"</div>",
-                "<strong>กลยุทธ์ \"มูลค่าของลายเซ็นมหาเศรษฐี\":</strong><br>\"วันนี้เพียงแค่เซ็นชื่อ คุณลูกค้าได้สร้างทรัพย์สินมูลค่าหลายล้านบาทให้ครอบครัวทันที ไม่ต้องรอสะสมเงินทีละนิด เป็นวิธีที่คนรวยใช้สร้างความมั่งคั่งที่เร็วที่สุดครับ\"<br><br><div class='bg-indigo-50 p-2 rounded-lg border-l-4 border-indigo-500'><strong>บทปิดการขาย:</strong><br>\"เพื่อความอุ่นใจระดับ VIP รบกวนคุณลูกค้าเซ็นชื่อตรงนี้เพื่อเปิดสิทธิ์คุ้มครองรายได้เลยครับ\"</div>",
-                "<strong>กลยุทธ์ \"ตู้เซฟรายได้ครอบครัว\":</strong><br>\"คุณลูกค้าเปรียบเสมือนเครื่องผลิตเงินของบ้าน ถ้าเครื่องจักรหยุดทำงาน รายได้ทั้งบ้านจะหยุดชะงัก แผนนี้คือ 'ปุ่มฉุกเฉิน' ที่จะทำงานแทนเครื่องผลิตเงินก้อนนี้ทันที เพื่อให้คุณภาพชีวิตของคนข้างหลังยังเหมือนเดิม 100%\"<br><br><div class='bg-indigo-50 p-2 rounded-lg border-l-4 border-indigo-500'><strong>บทปิดการขาย:</strong><br>\"ให้ผมเป็นผู้ดูแลตู้เซฟใบนี้ให้ครอบครัวคุณลูกค้านะครับ ขออนุญาตจัดเตรียมเอกสารครับ\"</div>"
-            ],
-            ideas_child: [
-                "<strong>กลยุทธ์ \"กองทุนการันตีอนาคต\":</strong><br>\"การทำแผนนี้ให้น้อง คือการสร้าง 'หลักประกันทางการเงิน' ที่ไม่มีวันล้มละลาย หากวันนึงเสาหลักของบ้านไม่อยู่ เงินก้อนนี้จะกลายเป็นทุนการศึกษาที่พาน้องไปถึงฝั่งฝันได้ตามที่คุณแม่ตั้งใจไว้ทุกประการครับ\"<br><br><div class='bg-indigo-50 p-2 rounded-lg border-l-4 border-indigo-500'><strong>บทปิดการขาย:</strong><br>\"มอบของขวัญที่มั่นคงที่สุดให้กับอนาคตของลูกรัก เริ่มต้นวันนี้เลยนะครับคุณแม่\"</div>",
-                "<strong>กลยุทธ์ \"ใบเบิกทางสุขภาพตลอดชีพ\":</strong><br>\"การเริ่มจองสิทธิ์ตั้งแต่น้องยังเล็ก คือการล็อกประวัติสุขภาพที่ใสสะอาดไว้ เมื่อน้องโตขึ้นสามารถเปลี่ยนเป็นแบบสะสมทรัพย์ที่มีเงินคืนสูงได้ทันที โดยไม่ต้องก่งวลเรื่องโรคประจำตัวที่อาจเกิดขึ้นในภายหลังครับ\"<br><br><div class='bg-indigo-50 p-2 rounded-lg border-l-4 border-indigo-500'><strong>บทปิดการขาย:</strong><br>\"ให้ความรักของคุณแม่กลายเป็นสวัสดิการที่ติดตัวน้องไปตลอดชีวิต เซ็นรับรองตรงนี้ได้เลยครับ\"</div>",
-                "<strong>กลยุทธ์ \"ประกันคือความรักที่จับต้องได้\":</strong><br>\"เราบอกรักลูกได้ทุกวันด้วยคำพูด แต่กรมธรรม์ฉบับนี้คือ 'คำบอกรัก' ที่เป็นตัวเงิน ในวันที่เราอาจจะไม่ได้อยู่บอกรักเขาด้วยตัวเอง ความรักของคุณแม่จะถูกเปลี่ยนเป็นทุนมหาศาลเพื่อดูแลชีวิตน้องต่อไปครับ\"<br><br><div class='bg-indigo-50 p-2 rounded-lg border-l-4 border-indigo-500'><strong>บทปิดการขาย:</strong><br>\"ส่งต่อความรักและความรับผิดชอบผ่านแผนการเงินฉบับนี้ด้วยกันนะครับ สะดวกโอนหรือตัดบัตรดีครับ?\"</div>"
-            ]
-        };
 
-        function toggleSettings() { 
-            const el = document.getElementById('manualInputs');
-            if (el) el.classList.toggle('hidden'); 
-        }
+        // --- Advisor Data Pools ---
+        const aiStatsPool = [
+            { t: "สถิติมะเร็ง 5 อวัยวะหลัก (30% Advance)", c: "มะเร็งตับและปอดเป็นสาเหตุการตายอันดับ 1 ของไทย SLB จ่ายผลประโยชน์ล่วงหน้า 30% ทันทีที่ตรวจพบ (ปอด, ตับ, ตับอ่อน, ทางเดินน้ำดี, หลอดอาหาร) โดยทุนมรดกไม่ลดลง" },
+            { t: "จุดต่างสำคัญ: 90% ให้ทายาททันใจ", c: "Signature Legacy จ่ายทุน 90% ให้ทายาททันทีในระยะสุดท้าย เพื่อเป็นกองทุนสภาพคล่องจัดการธุระโดยไม่ต้องรอใบมรณบัตรหรือคำสั่งศาล" },
+            { t: "กลุ่มลูกค้ามั่งคั่ง (HNW)", c: "ลูกค้าที่มีสินทรัพย์ 10 ล้านขึ้นไป มักเจอปัญหาสภาพคล่องในการโอนย้ายมรดก ประกันชีวิตคือสินทรัพย์เดียวที่โอนย้ายได้เร็วที่สุดและปลอดภาษีมรดก 100%" }
+        ];
 
-        function toggleCashMenu() { 
-            const container = document.getElementById('cashMenuContainer'); 
-            if (container) {
-                container.classList.toggle('hidden'); 
-                if (!container.classList.contains('hidden')) refreshAllDisplays(); 
+        const aiCostPool = [
+            "• ยามุ่งเป้า (Targeted Therapy) มะเร็งปอด: 200,000 - 450,000 บาท/เดือน",
+            "• ผ่าตัดบายพาสหัวใจ (รพ.เอกชนชั้นนำ): 800,000 - 1,800,000 บาท",
+            "• ภาษีมรดกสำหรับกองมรดก 150 ล้าน: ประมาณ 2.5 - 5 ล้านบาท"
+        ];
+
+        const aiIdeaPool = [
+            { t: "มรดก 90% ให้ทายาททันใจ", i: "เน้นจุดเด่นที่ SLB จ่ายเงินให้ทายาทล่วงหน้า 90% ในวาระสุดท้าย เพื่อเตรียมความพร้อมและจัดการธุระต่างๆ โดยไม่ต้องรอพินัยกรรม", c: "วันนี้เราเตรียมเงินก้อนนี้โอนเข้าบัญชีทายาททันทีในวันที่จำเป็นที่สุด สมัครแผนนี้ไว้เลยนะครับ" },
+            { t: "กองทุนสู้มะเร็ง 30% Advance", i: "รับเงิน 30% ทันทีเมื่อพบมะเร็ง 5 จุดเสี่ยง โดยทุนหลักไม่ลดลง เหมือนได้ค่ารักษาฟรีและยังคงมรดก 100% ให้ลูก", c: "เพราะโรคร้ายรอไม่ได้ วันนี้ล็อคเงินสด 3 ล้านจากทุน 10 ล้านมาเตรียมไว้รักษาเลยดีไหมครับ?" },
+            { t: "บริหารกระแสเงินสดระดับ Wealth", i: "ย้ายเงินฝากกำไรต่ำมาเป็นกองมรดกกำไร 100 เท่า เป็นการ Leverage สินทรัพย์ที่คุ้มค่าที่สุดสำหรับนักธุรกิจ", c: "เปลี่ยนเงินหลักหมื่นเป็นพอร์ตมรดกสิบล้านให้ครอบครัวทันที ยืนยันแผนชำระแบบ 5 ปี หรือ 10 ปีดีครับ?" }
+        ];
+
+        // --- Utility Functions ---
+        function setText(id, text) { const el = document.getElementById(id); if (el) el.innerText = text; }
+
+        // --- Main Functions ---
+        function getCommissionRateArray(plan, age) {
+            if (plan === '5SLB') {
+                if (age <= 25) return [0.15, 0.06, 0.0375, 0.01, 0.01];
+                if (age <= 60) return [0.10, 0.04, 0.025];
+                return [0.05, 0.02, 0.0125];
+            } else if (plan === '10SLB') {
+                if (age <= 40) return [0.30, 0.12, 0.08, 0.025, 0.025, 0.025];
+                if (age <= 60) return [0.25, 0.10, 0.07, 0.01, 0.01, 0.01];
+                return [0.10, 0.04, 0.025, 0.01, 0.01, 0.01];
             }
+            return [0];
         }
 
-        function toggleInstallmentDetails() { 
-            const el = document.getElementById('installmentDetails');
-            if (el) el.classList.toggle('hidden'); 
-        }
-
-        function toggleAIAdvisor() { 
-            const container = document.getElementById('aiAdvisorContainer'); 
-            if (container) {
-                container.classList.toggle('hidden'); 
-                if (!container.classList.contains('hidden')) updateAIAdvisorContent(); 
+        function calculate(source) {
+            currentMode = source; 
+            const age = parseInt(document.getElementById('ageInput').value || 30);
+            const rate = LIFE_RATES[currentPlan][currentGender][age] || 0; 
+            if (rate <= 0) return null;
+            let fSum = 0, fPrem = 0;
+            if (source === 'sum') {
+                fSum = parseFloat(document.getElementById('sumInsuredInput').value.replace(/,/g, '')) || 0;
+                fPrem = Math.round((fSum / 1000) * rate); document.getElementById('premiumInput').value = fPrem.toLocaleString();
+            } else {
+                fPrem = parseFloat(document.getElementById('premiumInput').value.replace(/,/g, '')) || 0;
+                fSum = (fPrem * 1000) / rate; document.getElementById('sumInsuredInput').value = Math.round(fSum).toLocaleString();
             }
+            lastCalculationData = { premium: fPrem, sum: fSum, age: age, gender: currentGender==='male'?'ชาย':'หญิง', years: currentPlan==='5SLB'?'5':'10' };
+            refreshAllDisplays(); return lastCalculationData;
         }
 
-        function toggleAISection(id) { 
-            const el = document.getElementById(id);
-            if (el) el.classList.toggle('hidden'); 
+        function refreshAllDisplays() {
+            if (!lastCalculationData) return;
+            const rates = getCommissionRateArray(currentPlan, lastCalculationData.age);
+            CASH_MODULE.refresh(lastCalculationData.premium, rates[0], rates);
+            const p = lastCalculationData.premium;
+            setText('sumMonthly', Math.round(p * 0.09).toLocaleString());
+            setText('sum3Month', Math.round(p * 0.27).toLocaleString());
+            setText('sum6Month', Math.round(p * 0.52).toLocaleString());
         }
 
-        function toggleSection(id) { 
-            const sections = ['caseIncomeInputs', 'comInputs', 'mbInputs', 'mybInputs', 'nabInputs']; 
-            sections.forEach(s => { 
-                const el = document.getElementById(s); 
-                if(el && s !== id) el.classList.add('hidden'); 
-            }); 
-            const target = document.getElementById(id); 
-            if(target) target.classList.toggle('hidden'); 
+        function updateAIStats(isManual = false) {
+            const el = document.getElementById('aiStatsText'); if(!el) return;
+            if(isManual) el.innerHTML = `<div class="flex flex-col items-center py-5 text-indigo-300"><i class="fas fa-sync fa-spin mb-2"></i><p class="text-[9px] uppercase font-bold">สุ่มข้อมูล...</p></div>`;
+            setTimeout(() => { const item = aiStatsPool[Math.floor(Math.random() * aiStatsPool.length)]; el.innerHTML = `<div class="p-3 bg-indigo-50/50 rounded-2xl border border-indigo-100"><p class="font-bold text-indigo-900 mb-1 text-[13px]"><i class="fas fa-chart-line mr-2"></i>${item.t}</p><p class="text-slate-600 text-[12px] leading-relaxed">${item.c}</p></div>`; }, isManual ? 400 : 0);
         }
 
-        function showCustomError(msg) { 
-            const toast = document.createElement('div'); 
-            toast.className = "fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-red-600/95 text-white px-8 py-5 rounded-2xl text-sm font-bold z-[800] shadow-2xl text-center backdrop-blur-sm transition-all"; 
-            toast.innerHTML = `<i class='fas fa-exclamation-triangle mb-3 block text-3xl text-red-200'></i><span class=\"whitespace-nowrap\">${msg}</span>`; 
-            document.body.appendChild(toast); 
-            setTimeout(() => {
-                toast.style.opacity = '0';
-                setTimeout(() => toast.remove(), 300);
-            }, 1200); 
+        function updateAICosts(isManual = false) {
+            const el = document.getElementById('aiCostText'); if(!el) return;
+            if(isManual) el.innerHTML = `<div class="flex flex-col items-center py-5 text-rose-300"><i class="fas fa-sync fa-spin mb-2"></i><p class="text-[9px] uppercase font-bold">สุ่มราคา...</p></div>`;
+            setTimeout(() => { const selected = aiCostPool.sort(() => 0.5 - Math.random()).slice(0, 3); el.innerHTML = `<div class="space-y-2 text-[12px] text-slate-600">${selected.map(i => `<p class="p-2.5 bg-rose-50/40 border-l-2 border-rose-400 rounded-r-xl">${i}</p>`).join('')}</div>`; }, isManual ? 400 : 0);
         }
 
-        function showCongratsPopup(type, value) { 
-            const popup = document.createElement('div'); 
-            popup.className = "fixed inset-0 z-[600] flex items-center justify-center p-6 bg-black/60 backdrop-blur-sm transition-opacity"; 
-            popup.innerHTML = `
-                <div class="bg-white rounded-[35px] p-8 text-center shadow-2xl max-w-xs w-full transform transition-transform duration-300 scale-100">
-                    <div class="w-20 h-20 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-5 shadow-inner">
-                        <i class="fas fa-trophy text-4xl"></i>
-                    </div>
-                    <h2 class="text-2xl font-bold text-slate-900 mb-2">ยินดีด้วย!</h2>
-                    <p class="text-slate-500 text-sm mb-6 leading-relaxed">คุณทำยอดสะสมถึงระดับสูงสุดแล้ว!<br>รับ${type} <span class="text-emerald-600 font-bold">${value}</span></p>
-                    <button onclick="this.parentElement.parentElement.remove()" class="w-full bg-blue-900 text-white py-4 rounded-2xl font-bold active:scale-95 transition-all shadow-md">ยอดเยี่ยม</button>
-                </div>`; 
-            document.body.appendChild(popup); 
-        }
-        
-        function setPlan(plan) { currentPlan = plan; const b10 = document.getElementById('btn10CX'); if(b10) b10.className = `flex-1 gender-btn ${plan==='10CX'?'active-blue':''}`; const b20 = document.getElementById('btn20CX'); if(b20) b20.className = `flex-1 gender-btn ${plan==='20CX'?'active-blue':''}`; calculate(currentMode); }
-        function setGender(gender) { currentGender = gender; const bM = document.getElementById('btnMale'); if(bM) bM.className = `flex-1 gender-btn ${gender==='male'?'active':''}`; const bF = document.getElementById('btnFemale'); if(bF) bF.className = `flex-1 gender-btn ${gender==='female'?'active-pink':''}`; calculate(currentMode); }
-        function handlePremiumInput(el) { let v = el.value.replace(/,/g, '').split('.')[0]; if (!isNaN(v) && v !== '') { el.value = Number(v).toLocaleString(); calculate('premium'); } }
-        function handleSumInput(el) { let v = el.value.replace(/,/g, '').split('.')[0]; if (!isNaN(v) && v !== '') { el.value = Number(v).toLocaleString(); calculate('sum'); } }
-        function setQuickSum(val) { const el = document.getElementById('sumInsuredInput'); if(el) { el.value = val.toLocaleString(); calculate('sum'); } }
-        function setQuickPremium(val) { const el = document.getElementById('premiumInput'); if(el) { el.value = val.toLocaleString(); calculate('premium'); } }
-        
-        function getDiscount(sum, plan) { 
-            if (sum >= 2000000) return 0.5; 
-            return 0; 
-        }
-        
-        function calculate(source) { 
-            currentMode = source;
-            const ageInput = document.getElementById('ageInput'); 
-            const age = parseInt(ageInput ? ageInput.value : 0) || 0; 
-            const totalRate = (LIFE_RATES[currentPlan]?.[currentGender]?.[age] || 0) + (CI_RATES[currentPlan]?.[currentGender]?.[age] || 0); 
-            if (totalRate <= 0) return null; 
-            let fSum = 0, fPrem = 0; 
-            if (source === 'sum') { 
-                const sumInput = document.getElementById('sumInsuredInput'); 
-                fSum = parseFloat(sumInput ? sumInput.value.replace(/,/g, '') : 0) || 0; 
-                fPrem = Math.round((fSum / 1000) * (totalRate - getDiscount(fSum, currentPlan))); 
-            } else { 
-                const premInput = document.getElementById('premiumInput'); 
-                fPrem = parseFloat(premInput ? premInput.value.replace(/,/g, '') : 50000) || 0; 
-                for (let d_val of [0.5, 0]) { 
-                    let s = (fPrem * 1000) / (totalRate - d_val); 
-                    if (getDiscount(s + 1, currentPlan) === d_val) { fSum = s; break; } 
-                } 
-                if (fSum === 0) fSum = (fPrem * 1000) / totalRate; 
-                const sumInput = document.getElementById('sumInsuredInput'); 
-                if(sumInput) sumInput.value = formatNum(fSum); 
-            } 
-            
-            const dispPrem = document.getElementById('displayPremium');
-            const dispDaily = document.getElementById('displayDailyPremium');
-            const dailyRow = document.getElementById('dailyPremiumRow');
-
-            if(dispPrem) {
-                if (fPrem > 0 && fPrem < 4000) {
-                    dispPrem.innerHTML = '<span class="text-[12px] text-red-600 font-bold tracking-tight">เบี้ยประกันรายปี ขั้นต่ำ 4,000 บาท</span>';
-                    if(dailyRow) dailyRow.classList.add('hidden');
-                } else {
-                    dispPrem.innerText = Math.round(fPrem).toLocaleString();
-                    if(dailyRow) {
-                        dailyRow.classList.remove('hidden');
-                        if(dispDaily) {
-                            dispDaily.innerText = formatNum(fPrem / 365);
-                        }
-                    }
-                }
-            }
-
-            lastCalculationData = { premium: fPrem, sum: fSum, gender: currentGender==='male'?'ชาย':'หญิง', age: age, years: currentPlan==='10CX'?'10':'20' }; 
-            refreshAllDisplays(); 
-            return lastCalculationData; 
-        }
-        
-        function refreshAllDisplays() { 
-            if (!lastCalculationData) return; 
-            const p = lastCalculationData.premium; 
-            const fyc = Math.round(p * COM_RATES[currentPlan][0]); 
-            setText('caseIncomeComm', fyc.toLocaleString() + " บาท"); 
-            setText('sumMonthly', Math.round(p * 0.09).toLocaleString()); 
-            setText('sum3Month', Math.round(p * 0.27).toLocaleString()); 
-            setText('sum6Month', Math.round(p * 0.52).toLocaleString()); 
-            
-            let comH = `<h4 class="text-xs font-bold text-amber-900 mb-3 tracking-wide text-center">ประมาณการคอมมิชชันรายปี</h4>`; 
-            let totalComAmt = 0; 
-            COM_RATES[currentPlan].forEach((r, i) => { 
-                const annualAmt = Math.round(p * r); 
-                totalComAmt += annualAmt; 
-                comH += `<div class="com-item-row"><span class="com-percent-label" style="margin-left: 0; margin-right: 12px; flex: none; width: 45px; text-align: left;">${(r*100).toFixed(1)}%</span><span class="com-year-pill">ปีที่ ${i+1}</span><span class="com-amount-value" style="flex: 1;">${annualAmt.toLocaleString()}</span></div>`; 
-            }); 
-            const totalPercent = ((totalComAmt / p) * 100).toFixed(1); 
-            comH += `<div class="mt-4 pt-3 border-t-2 border-amber-200 flex justify-between items-center"><div class="text-left"><div class="text-lg font-black text-amber-600">${totalPercent}%</div><div class="text-[8px] font-bold text-amber-900 uppercase">Percent รวม</div></div><div class="text-right"><div class="text-xs font-bold text-amber-900">คอมมิชชันรวมตลอดสัญญา</div><div class="text-lg font-black text-amber-600">${totalComAmt.toLocaleString()} บาท</div></div></div>`; 
-            document.getElementById('comList').innerHTML = comH; 
-            
-            updateMBDisplay(); 
-            updateMYBDisplay(); 
-            updateNABDisplay(); 
-            
-            setText('caseIncomeBonus', (window.currentMBBonus || 0).toLocaleString() + " บาท");
-            setText('caseIncomeMYBonus', (window.currentMYBBonus || 0).toLocaleString() + " บาท");
-
-            const caseTotal = Math.round(fyc + (window.currentMBBonus || 0) + (window.currentMYBBonus || 0) + (window.currentNABBonus || 0)); 
-            setText('caseIncomeTotal', caseTotal.toLocaleString() + " บาท"); 
-            setText('caseIncomePercent', "(" + ((caseTotal / p) * 100).toFixed(1) + "%)"); 
-        }
-        
-        function updateMBDisplay() { 
-            if (!lastCalculationData) return; 
-            const newFYC = Math.round(lastCalculationData.premium * COM_RATES[currentPlan][0]); 
-            const existingFYC = parseFloat(document.getElementById('existingFYCInput')?.value.replace(/,/g, '')) || 0; 
-            const totalFYC = newFYC + existingFYC; 
-            const tiers = [{min:8000, max: 16000, rate:0.20, id:"mb-tier1"}, {min:16001, max: 32000, rate:0.25, id:"mb-tier2"}, {min:32001, max: 64000, rate:0.30, id:"mb-tier3"}, {min:64001, max: Infinity, rate:0.35, id:"mb-tier4"}]; 
-            let curIdx = -1; 
-            tiers.forEach((t, i) => { 
-                const el = document.getElementById(t.id); 
-                if(el) { 
-                    el.classList.remove("active"); 
-                    if (totalFYC > t.max && i < tiers.length - 1) el.classList.add('hidden'); 
-                    else el.classList.remove('hidden'); 
-                } 
-                if (totalFYC >= t.min) curIdx = i; 
-            }); 
-            if (curIdx >= 0) { 
-                const el = document.getElementById(tiers[curIdx].id); 
-                if(el) { el.classList.add("active"); el.classList.remove('hidden'); } 
-            } 
-            const currentRate = curIdx >= 0 ? tiers[curIdx].rate : 0; 
-            const existIdx = tiers.findLastIndex(t => existingFYC >= t.min); 
-            const existRate = existIdx >= 0 ? tiers[existIdx].rate : 0; 
-            const existingBonus = Math.round(existingFYC * existRate); 
-            const totalBonus = Math.round(totalFYC * currentRate); 
-            window.currentMBBonus = totalBonus - existingBonus; 
-            setText('mbExistingCalc', `${existingBonus.toLocaleString()} บาท`); 
-            setText('mbCaseCalc', `${window.currentMBBonus.toLocaleString()} บาท`); 
-            setText('mbCalculatedBonus', totalBonus.toLocaleString() + " บาท"); 
-            setText('mbFormula', `(${existingFYC.toLocaleString()} + ${newFYC.toLocaleString()} = ${totalFYC.toLocaleString()} x ${currentRate * 100}%)`); 
-            setText('mbCaseComm', newFYC.toLocaleString() + " บาท"); 
-            const adviceBox = document.getElementById('mbAdvice'); 
-            if (adviceBox) { 
-                if (curIdx < 3) { 
-                    const next = tiers[curIdx + 1]; 
-                    adviceBox.classList.remove('success'); 
-                    adviceBox.innerHTML = `<i class=\"fas fa-lightbulb text-amber-500 text-lg\"></i><div class=\"flex-1 text-slate-700\"><strong>เพิ่มอีก ${(next.min - totalFYC).toLocaleString()} บาท</strong><br><span>เพื่อรับโบนัสระดับถัดไป ${(next.rate * 100)}%</span></div>`; 
-                } else { 
-                    adviceBox.classList.add('success'); 
-                    adviceBox.innerHTML = `<i class=\"fas fa-trophy text-emerald-500 text-lg\"></i><span class=\"text-emerald-900 font-bold\">ยินดีด้วย! คุณได้รับโบนัสระดับสูงสุด 35% แล้ว</span>`; 
-                    if (window.lastMaxBonusFYC_MB !== totalFYC && !document.getElementById('cashMenuContainer').classList.contains('hidden')) { 
-                        showCongratsPopup('โบนัสรายเดือน', '35%'); 
-                        window.lastMaxBonusFYC_MB = totalFYC; 
-                    } 
-                } 
-            } 
+        function updateAIIdeas(isManual = false) {
+            const el = document.getElementById('aiIdeaText'); if(!el) return;
+            if(isManual) el.innerHTML = `<div class="flex flex-col items-center py-5 text-amber-300"><i class="fas fa-sync fa-spin mb-2"></i><p class="text-[9px] uppercase font-bold">เปลี่ยนไอเดีย...</p></div>`;
+            setTimeout(() => { const item = aiIdeaPool[Math.floor(Math.random() * aiIdeaPool.length)]; el.innerHTML = `<div class="space-y-3"><div class="p-3 bg-amber-50 rounded-2xl border border-amber-200"><p class="font-bold text-amber-900 mb-1 text-[13px]"><i class="fas fa-lightbulb mr-2"></i>${item.t}</p><p class="text-slate-700 text-[12px] leading-relaxed">${item.i}</p></div><div class="closing-box"><p class="text-[10px] uppercase font-bold text-blue-400 mb-1">บทปิดการขาย:</p><p class="text-blue-900 italic">"${item.c}"</p></div></div>`; }, isManual ? 400 : 0);
         }
 
-        function updateMYBDisplay() { 
-            if (!lastCalculationData) return; 
-            const newFYC = Math.round(lastCalculationData.premium * COM_RATES[currentPlan][0]); 
-            const existingFYC = parseFloat(document.getElementById('existingHalfYearFYCInput')?.value.replace(/,/g, '')) || 0; 
-            const totalFYC = newFYC + existingFYC; 
-            const tiers = [{min:40000, max: 60000, rate:0.175, id:"myb-tier1"}, {min:60001, max: 100000, rate:0.20, id:"myb-tier2"}, {min:100001, max: 150000, rate:0.225, id:"myb-tier3"}, {min:150001, max: 200000, rate:0.25, id:"myb-tier4"}, {min:200001, max: 250000, rate:0.275, id:"myb-tier5"}, {min:250001, max: 300000, rate:0.30, id:"mb-tier6"}, {min:300001, max: 400000, rate:0.325, id:"myb-tier7"}, {min:400001, max: Infinity, rate:0.35, id:"myb-tier8"}]; 
-            let curIdx = -1; 
-            tiers.forEach((t, i) => { 
-                const el = document.getElementById(t.id || `myb-tier${i+1}`); 
-                if(el) { 
-                    el.classList.remove("active"); 
-                    if (totalFYC > t.max && i < tiers.length - 1) el.classList.add('hidden'); 
-                    else el.classList.remove('hidden'); 
-                } 
-                if (totalFYC >= t.min) curIdx = i; 
-            }); 
-            if (curIdx >= 0) { 
-                const el = document.getElementById(tiers[curIdx].id || `myb-tier${curIdx+1}`); 
-                if(el) { el.classList.add("active"); el.classList.remove('hidden'); } 
-            } 
-            const currentRate = curIdx >= 0 ? tiers[curIdx].rate : 0; 
-            const existIdx = tiers.findLastIndex(t => existingFYC >= t.min); 
-            const existRate = existIdx >= 0 ? tiers[existIdx].rate : 0; 
-            const existingBonus = Math.round(existingFYC * existRate); 
-            const totalBonus = Math.round(totalFYC * currentRate); 
-            window.currentMYBBonus = totalBonus - existingBonus; 
-            setText('mybExistingCalc', `${existingBonus.toLocaleString()} บาท`); 
-            setText('mybCaseCalc', `${window.currentMYBBonus.toLocaleString()} บาท`); 
-            setText('mybCalculatedBonus', totalBonus.toLocaleString() + " บาท"); 
-            setText('mybFormula', `(${existingFYC.toLocaleString()} + ${newFYC.toLocaleString()} = ${totalFYC.toLocaleString()} x ${(currentRate * 100).toFixed(1)}%)`); 
-            setText('mybCaseComm', newFYC.toLocaleString() + " บาท"); 
-            const adviceBox = document.getElementById('mybAdvice'); 
-            if (adviceBox) { 
-                if (curIdx < 7) { 
-                    const next = tiers[curIdx + 1]; 
-                    adviceBox.classList.remove('success'); 
-                    adviceBox.innerHTML = `<i class=\"fas fa-chart-line text-violet-500 text-lg\"></i><div class=\"flex-1 text-slate-700\"><strong>เพิ่มอีก ${(next.min - totalFYC).toLocaleString()} บาท</strong><br><span>เพื่อรับโบนัสระดับถัดไป ${(next.rate * 100).toFixed(1)}%</span></div>`; 
-                } else { 
-                    adviceBox.classList.add('success'); 
-                    adviceBox.innerHTML = `<i class=\"fas fa-trophy text-emerald-500 text-lg\"></i><span class=\"text-emerald-900 font-bold\">ยินดีด้วย! คุณได้รับโบนัสครึ่งปีสูงสุด 35% แล้ว</span>`; 
-                    if (window.lastMaxBonusFYC_MYB !== totalFYC && !document.getElementById('cashMenuContainer').classList.contains('hidden')) { 
-                        showCongratsPopup('โบนัสครึ่งปี', '35%'); 
-                        window.lastMaxBonusFYC_MYB = totalFYC; 
-                    } 
-                } 
-            } 
-        }
+        function toggleSection(id) { document.getElementById(id).classList.toggle('hidden'); }
+        function toggleAccordion(id) { toggleSection(id); }
+        function toggleAIInnerSection(id) { toggleSection(id); }
+        function toggleAIAdvisor() { const c = document.getElementById('aiAdvisorContainer'); c.classList.toggle('hidden'); if(!c.classList.contains('hidden')) { updateAIStats(false); updateAICosts(false); updateAIIdeas(false); } }
+        function toggleCashMenu() { document.getElementById('cashMenuContainer').classList.toggle('hidden'); CASH_MODULE.refreshFromUI(); }
 
-        function updateNABDisplay() { 
-            if (!lastCalculationData) return; 
-            const fycFromCase = Math.round(lastCalculationData.premium * COM_RATES[currentPlan][0]); 
-            const existingFYC = parseFloat(document.getElementById('existingNABFYC')?.value.replace(/,/g, '')) || 0; 
-            const existingCases = parseInt(document.getElementById('existingNABCases')?.value) || 0; 
-            const phase = document.getElementById('nabPhaseSelect')?.value || 'p1'; 
-            const totalFYC = fycFromCase + existingFYC; 
-            const totalCases = 1 + existingCases; 
-            let tiers = phase === 'p1' ? [{ minFYC: 20000, minCases: 3, bonus: 6000, label: "≥ 20,000 และ 3 ราย" },{ minFYC: 50000, minCases: 5, bonus: 15000, label: "≥ 50,000 และ 5 ราย" }] : [{ minFYC: 40000, minCases: 5, bonus: 10000, label: "≥ 40,000 และ 5 ราย" },{ minFYC: 100000, minCases: 10, bonus: 25000, label: "≥ 100,000 และ 10 ราย" }]; 
-            let nabBonus = 0; 
-            let currentTierIdx = -1; 
-            let tierHtml = ''; 
-            tiers.forEach((t, i) => { 
-                const fycPassed = totalFYC >= t.minFYC; 
-                const casesPassed = totalCases >= t.minCases; 
-                const isActive = fycPassed && casesPassed; 
-                if (isActive) { nabBonus = t.bonus; currentTierIdx = i; } 
-                const fycIcon = fycPassed ? '<i class=\"fas fa-check-circle text-emerald-500\"></i>' : '<i class=\"far fa-circle text-slate-300\"></i>'; 
-                const casesIcon = casesPassed ? '<i class=\"fas fa-check-circle text-emerald-500\"></i>' : '<i class=\"far fa-circle text-slate-300\"></i>'; 
-                tierHtml += `<tr class=\"${isActive ? 'active' : ''}\"><td class=\"text-left py-3\"><div class=\"font-bold mb-1\">${t.label}</div><div class=\"text-[11px] flex flex-col gap-1\"><span>${fycIcon} FYC: ${totalFYC.toLocaleString()} / ${t.minFYC.toLocaleString()}</span><span>${casesIcon} ราย: ${totalCases} / ${t.minCases}</span></div></td><td class=\"text-right font-black\">${t.bonus.toLocaleString()}</td></tr>`; 
-            }); 
-            document.getElementById('nabTierBody').innerHTML = tierHtml; 
-            window.currentNABBonus = nabBonus; 
-            setText('nabCalculatedBonus', nabBonus.toLocaleString() + " บาท"); 
-            setText('nabCaseComm', fycFromCase.toLocaleString() + " บาท"); 
-            const adviceBox = document.getElementById('nabAdvice'); 
-            if (adviceBox) { 
-                if (currentTierIdx < tiers.length - 1) { 
-                    const nextTier = tiers[currentTierIdx + 1]; 
-                    const fycNeed = Math.max(0, nextTier.minFYC - totalFYC); 
-                    const casesNeed = Math.max(0, nextTier.minCases - totalCases); 
-                    let adviceText = "<strong>เพิ่มอีก "; 
-                    if (fycNeed > 0) adviceText += `${fycNeed.toLocaleString()} FYC `; 
-                    if (fycNeed > 0 && casesNeed > 0) adviceText += "และ "; 
-                    if (casesNeed > 0) adviceText += `${casesNeed} ราย`; 
-                    adviceText += `</strong><br><span>เพื่อรับโบนัส ${nextTier.bonus.toLocaleString()} บาท</span>`; 
-                    adviceBox.classList.remove('success'); 
-                    adviceBox.innerHTML = `<i class=\"fas fa-lightbulb text-cyan-500 text-lg\"></i><div class=\"flex-1 text-cyan-900\">${adviceText}</div>`; 
-                } else { 
-                    adviceBox.classList.add('success'); 
-                    adviceBox.innerHTML = `<i class=\"fas fa-trophy text-emerald-500 text-lg\"></i><span class=\"text-emerald-900 font-bold\">ยินดีด้วย! คุณได้รับโบนัสสูงสุด ${nabBonus.toLocaleString()} บาท แล้ว</span>`; 
-                    if (window.lastMaxNABBonus !== nabBonus && nabBonus > 0 && !document.getElementById('cashMenuContainer').classList.contains('hidden')) { 
-                        window.lastMaxNABBonus = nabBonus; 
-                    } 
-                } 
-            } 
-        }
+        function setGender(g) { currentGender = g; document.getElementById('btnMale').className = `flex-1 gender-btn ${g==='male'?'active':''}`; document.getElementById('btnFemale').className = `flex-1 gender-btn ${g==='female'?'active-pink':''}`; calculate('sum'); }
+        function setPlan(p) { currentPlan = p; document.getElementById('btn5SLB').className = `flex-1 gender-btn ${p==='5SLB'?'active-blue':''}`; document.getElementById('btn10SLB').className = `flex-1 gender-btn ${p==='10SLB'?'active-blue':''}`; calculate('sum'); }
+        function setQuickSum(v) { document.getElementById('sumInsuredInput').value = v.toLocaleString(); calculate('sum'); }
+        function handleSumInput(el) { let v = el.value.replace(/,/g, ''); if(!isNaN(v) && v !== '') { el.value = Number(v).toLocaleString(); calculate('sum'); } }
+        function handlePremiumInput(el) { let v = el.value.replace(/,/g, ''); if(!isNaN(v) && v !== '') { el.value = Number(v).toLocaleString(); calculate('premium'); } }
+        function checkMinLimit() { const v = parseFloat(document.getElementById('sumInsuredInput').value.replace(/,/g, '')); if(v < 5000000) { setQuickSum(5000000); } }
 
         function closeModal() { document.getElementById('resultModal').classList.remove('show'); }
-
-        function manualTriggerPopup() { 
-            const d = calculate('sum');
-            if(!d) return;
-
-            // ตรวจสอบเงื่อนไขขั้นต่ำหลังจากพิมพ์เสร็จและกดปุ่ม
-            if (currentGender === 'female' && d.sum < 400000) { showCustomError("เพศหญิง ทุนประกันขั้นต่ำ 400,000 บาท"); return; } 
-            if (currentGender === 'male' && d.sum < 600000) { showCustomError("เพศชาย ทุนประกันขั้นต่ำ 600,000 บาท"); return; } 
-            if (d.premium < 4000) { showCustomError("เบี้ยประกันภัยรายปี ขั้นต่ำ 4,000 บาท"); return; }
-
-            openModal(d); 
+        function manualTriggerPopup() { const d = calculate('sum'); if(d) openModal(d); }
+        function openModal(d) {
+            setText('modalGender', d.gender); setText('modalAge', d.age + " ปี"); setText('modalYears', d.years + " ปี");
+            setText('modalPremium', Math.round(d.premium).toLocaleString() + " บาท"); setText('modalSum', Math.round(d.sum).toLocaleString() + " บาท");
+            setText('modalMaturity', Math.round(d.sum).toLocaleString() + " บาท");
+            document.getElementById('resultModal').classList.add('show');
         }
 
-        function openModal(d) { 
-            if(!d) return; 
-            setText('modalGender', d.gender); 
-            setText('modalAge', d.age + " ปี"); 
-            setText('modalYears', d.years + " ปี"); 
-            setText('modalPremium', Math.round(d.premium).toLocaleString() + " บาท"); 
-            setText('modalSum', formatNum(d.sum) + " บาท"); 
-            document.getElementById('resultModal').classList.add('show'); 
-        }
-
-        function adjustInputFontSize(el) { 
-            el.style.fontSize = '14px'; 
-            let currentSize = 14; 
-            while (el.scrollWidth > el.clientWidth && currentSize > 9) { 
-                currentSize -= 0.5; 
-                el.style.fontSize = currentSize + 'px'; 
-            } 
-        }
-
-        function processTextCommand() { 
-            const textRaw = document.getElementById('textCommand').value; 
-            if(!textRaw) return; 
-            let t = textRaw.toLowerCase().replace(/,/g, ''); 
-            let gender = currentGender; 
-            if(t.match(/หญิง|ผู้หญิง|สาว/)) gender = 'female'; 
-            else if(t.match(/ชาย|ผู้ชาย|หนุ่ม/)) gender = 'male'; 
-            let plan = currentPlan; 
-            if(t.match(/10\s*cx|10\s*ปี|แผน\s*10/)) plan = '10CX'; 
-            else if(t.match(/20\s*cx|20\s*ปี|แผน\s*20/)) plan = '20CX'; 
-            let mode = 'premium'; 
-            if(t.match(/ทุน|คุ้มครอง/)) mode = 'sum'; 
-            let age = -1; let amount = -1; 
-            const mults = { 'ล้าน': 1000000, 'แสน': 100000, 'หมื่น': 10000, 'พัน': 1000 }; 
-            const regex = /(\d+(?:\.\d+)?)\s*(ล้าน|แสน|หมื่น|พัน)?/g; 
-            let match; 
-            while ((match = regex.exec(t)) !== null) { 
-                let val = parseFloat(match[1]); 
-                let m = match[2]; 
-                if (m && mults[m]) val *= mults[m]; 
-                let contextStr = t.substring(Math.max(0, match.index - 5), Math.min(t.length, regex.lastIndex + 5)); 
-                let isPlanIdentifier = (val === 10 || val === 20) && contextStr.match(/cx|ปี|แผน/); 
-                if (val >= 1000 || m) { 
-                    if (amount === -1) amount = val; 
-                } else if (val >= 20 && val <= 60 && age === -1 && !isPlanIdentifier) { 
-                    age = val; 
-                } 
-            } 
-            let ageMatch = t.match(/อายุ\s*(\d+)/); 
-            if (ageMatch && parseInt(ageMatch[1]) >= 20 && parseInt(ageMatch[1]) <= 60) age = parseInt(ageMatch[1]); 
-            if (age !== -1) document.getElementById('ageInput').value = age; 
-            if (amount !== -1) { 
-                if (mode === 'sum') document.getElementById('sumInsuredInput').value = formatNum(amount); 
-                else { const premInput = document.getElementById('premiumInput'); if(premInput) premInput.value = amount.toLocaleString(); } 
-            } 
-            currentGender = gender; 
-            const bM = document.getElementById('btnMale'); if(bM) bM.className = `flex-1 gender-btn ${gender==='male'?'active':''}`; 
-            const bF = document.getElementById('btnFemale'); if(bF) bF.className = `flex-1 gender-btn ${gender==='female'?'active-pink':''}`; 
-            currentPlan = plan; 
-            const b10 = document.getElementById('btn10CX'); if(b10) b10.className = `flex-1 gender-btn ${plan==='10CX'?'active-blue':''}`; 
-            const b20 = document.getElementById('btn20CX'); if(b20) b20.className = `flex-1 gender-btn ${plan==='20CX'?'active-blue':''}`; 
-            
-            const resultData = calculate(mode);
-            if(resultData) manualTriggerPopup(); // เรียกป๊อปอัพแบบมี validation
-
-            document.getElementById('textCommand').value = ""; 
-        }
-
-        function handleEnter(e) { if (e.key === 'Enter') processTextCommand(); }
-
-        function copyToClipboard(text, msg) { 
-            const el = document.createElement('textarea'); 
-            el.value = text; 
-            document.body.appendChild(el); 
-            el.select(); 
-            document.execCommand('copy'); 
-            document.body.removeChild(el); 
-            const toast = document.createElement('div'); 
-            toast.className = "fixed bottom-10 left-1/2 -translate-x-1/2 bg-blue-900 text-white px-6 py-3 rounded-full text-xs font-bold z-[200] shadow-lg transition-opacity duration-300"; 
-            toast.innerText = msg; 
-            document.body.appendChild(toast); 
-            setTimeout(() => { toast.style.opacity = "0"; setTimeout(() => toast.remove(), 300); }, 2000); 
-        }
-
-        function copyInstallment(type) { 
-            if (!lastCalculationData) return; 
-            const d = lastCalculationData; 
-            const p = d.premium; 
-            let amt = 0, label = '', minLimit = 0; 
-            if(type === 'monthly') { amt = Math.round(p * 0.09); label = 'รายเดือน'; minLimit = 500; } 
-            if(type === '3month') { amt = Math.round(p * 0.27); label = 'ราย 3 เดือน'; minLimit = 2500; } 
-            if(type === '6month') { amt = Math.round(p * 0.52); label = 'ราย 6 เดือน'; minLimit = 2500; } 
-
-            if (amt < minLimit) {
-                showCustomError(`ยอดชำระ${label} ต้องไม่ต่ำกว่า ${minLimit.toLocaleString()} บาท`);
-                return;
+        function copyInstallment(type) {
+            let id = type === 'monthly' ? 'sumMonthly' : (type === '3month' ? 'sum3Month' : 'sum6Month');
+            const el = document.getElementById(id);
+            if(el) {
+                const t = el.innerText + " บาท"; const ta = document.createElement('textarea'); ta.value = t; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
+                const toast = document.createElement('div'); toast.className = "fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-blue-600 text-white px-8 py-4 rounded-2xl text-sm font-bold z-[800]"; toast.innerText = "คัดลอกยอดแล้ว"; document.body.appendChild(toast); setTimeout(() => toast.remove(), 1500);
             }
-
-            const sumStr = formatNum(d.sum); 
-            const dailyAvg = formatNum(d.premium / 365);
-            let text = `เพศ: ${d.gender}\nอายุ: ${d.age} ปี\nเบี้ยประกัน: ${amt.toLocaleString()} บาท\n(เฉลี่ย ${dailyAvg} บาท/วัน)\nทุนประกัน: ${sumStr} บาท\n\n--------------------------\nเปลี่ยนแบบประกันได้ ในปีที่ 4 ยกเว้น ประกันสุขภาพ/ประกันโรคร้าย\n--------------------------`; 
-            copyToClipboard(text, `คัดลอกยอดชำระ${label}เรียบร้อย`); 
         }
 
-        function handleCopyAndClose() { 
-            if (lastCalculationData) { 
-                const d = lastCalculationData; 
-                const sumStr = formatNum(d.sum); 
-                const dailyAvg = formatNum(d.premium / 365);
-                let text = `เพศ: ${d.gender}\nอายุ: ${d.age} ปี\nเบี้ยประกัน: ${Math.round(d.premium).toLocaleString()} บาท\n(เฉลี่ย ${dailyAvg} บาท/วัน)\nทุนประกัน: ${sumStr} บาท\n\n--------------------------\nเปลี่ยนแบบประกันได้ ในปีที่ 4 ยกเว้น ประกันสุขภาพ/ประกันโรคร้าย\n--------------------------`; 
-                copyToClipboard(text, "คัดลอกเรียบร้อยแล้ว"); 
-            } 
-            closeModal(); 
+        function processTextCommand() {
+            const t = document.getElementById('textCommand').value.toLowerCase(); const ageM = t.match(/(\d+)/);
+            if(ageM) document.getElementById('ageInput').value = ageM[1];
+            if(t.includes('ญ')) setGender('female'); else if(t.includes('ช')) setGender('male');
+            if(t.includes('5')) setPlan('5SLB'); else if(t.includes('10')) setPlan('10SLB');
+            calculate('sum'); manualTriggerPopup(); document.getElementById('textCommand').value = "";
         }
 
-        function startVoiceRecognition() { 
-            const SpeechRecognition = window.webkitSpeechRecognition || window.SpeechRecognition; 
-            if (!SpeechRecognition) return; 
-            const recognition = new SpeechRecognition(); 
-            recognition.lang = 'th-TH'; 
-            recognition.onstart = () => { document.getElementById('voiceIcon').className = "fas fa-microphone listening-active"; }; 
-            recognition.onspeechend = () => { recognition.stop(); document.getElementById('voiceIcon').className = "fas fa-microphone"; }; 
-            recognition.onresult = (event) => { document.getElementById('textCommand').value = event.results[0][0].transcript; processTextCommand(); }; 
-            recognition.start(); 
+        function startVoiceRecognition() {
+            const SR = window.SpeechRecognition || window.webkitSpeechRecognition; if(!SR) return;
+            const r = new SR(); r.lang = 'th-TH'; r.onstart = () => document.getElementById('voiceIcon').classList.add('listening-active');
+            r.onresult = (e) => { document.getElementById('textCommand').value = e.results[0][0].transcript; processTextCommand(); };
+            r.onend = () => document.getElementById('voiceIcon').classList.remove('listening-active'); r.start();
         }
 
-        function handleNABFYCInput(el) { let v = el.value.replace(/,/g, ''); if (!isNaN(v) && v !== '') el.value = Number(v).toLocaleString(); updateNABDisplay(); }
-        function handleMBInput(el) { let v = el.value.replace(/,/g, ''); if (!isNaN(v) && v !== '') el.value = Number(v).toLocaleString(); updateMBDisplay(); refreshAllDisplays(); }
-        function handleMYBInput(el) { let v = el.value.replace(/,/g, ''); if (!isNaN(v) && v !== '') el.value = Number(v).toLocaleString(); updateMYBDisplay(); refreshAllDisplays(); }
-        
-        function updateAIIdeas(isRefresh = false) { 
-            const age = parseInt(document.getElementById('ageInput').value) || 0; 
-            const pool = (age >= 20 && age <= 60) ? aiPool.ideas_adult : aiPool.ideas_child; 
-            const singleIdea = pool[Math.floor(Math.random() * pool.length)];
-            document.getElementById('aiIdeaText').innerHTML = singleIdea; 
-        }
-        function updateAIAdvisorContent() { updateAIIdeas(); }
-
-        function showDefinition(title, desc) { 
-            document.getElementById('defTitle').innerText = title; 
-            document.getElementById('defDescription').innerText = desc; 
-            const modal = document.getElementById('definitionModal'); 
-            modal.classList.remove('opacity-0', 'pointer-events-none'); 
-            const content = document.getElementById('defModalContent'); 
-            content.classList.remove('scale-95'); 
-            content.classList.add('scale-100'); 
-        }
-        function closeDefinition() { 
-            const modal = document.getElementById('definitionModal'); 
-            modal.classList.add('opacity-0', 'pointer-events-none'); 
-            const content = document.getElementById('defModalContent'); 
-            content.classList.remove('scale-100'); 
-            content.classList.add('scale-95'); 
+        function handleCopyAndClose() {
+            const d = lastCalculationData; if(!d) return;
+            const t = `👤 เพศ ${d.gender} | อายุ ${d.age} ปี\n🛡️ ทุนประกัน ${Math.round(d.sum).toLocaleString()} บาท\n💰 เบี้ยประกันภัย : ${Math.round(d.premium).toLocaleString()} บาท\n⏳ ระยะชำระ ${d.years} ปี\n------------------\n🕊️ ความคุ้มครองชีวิต : ${Math.round(d.sum).toLocaleString()} บาท`;
+            const el = document.createElement('textarea'); el.value = t; document.body.appendChild(el); el.select(); document.execCommand('copy'); document.body.removeChild(el); closeModal();
         }
 
         window.onload = () => { calculate('sum'); };
